@@ -15,6 +15,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null, indexed, unique
 description | text      |
+due_date    | dates     | 
 
 ## lists
 column name | data type | details

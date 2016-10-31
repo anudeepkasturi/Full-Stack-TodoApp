@@ -1,4 +1,5 @@
-Sample state
+# Sample state
+```js
 {
   current_user: {
     username: "ish"
@@ -23,3 +24,4 @@ Sample state
   task: {} // selected task
   search: ""
 }
+```

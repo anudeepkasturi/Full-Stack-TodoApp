@@ -8,7 +8,13 @@
 
 ## Minimum Viable Product
 
-Todo App (Title TBA) is an organizational tool used for creating tasks and setting due dates to help you become more productive.
+Todo App (Title TBA) is an organizational tool used for creating tasks and setting due dates to help you become more productive. At the end of week 9 , this app should:
+* Have user authentication and a demo login
+* Create tasks with a description and a due date
+* Create lists that hold tasks
+ + Have the option to add and delete tasks from lists
+* Have a list summary with the time, number of tasks, and the number completed
+* Have a search function that will show the relevant tasks
 
 ## Design Docs
 * [View Wireframes][wireframes]
