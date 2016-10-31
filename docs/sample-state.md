@@ -16,7 +16,6 @@
     1: {
       id: 1
       title: "Make a website"
-      list_id: 1
       description: "full stack"
     }
   }
