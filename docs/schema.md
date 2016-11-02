@@ -15,13 +15,15 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null, indexed, unique
 description | text      |
-due_date    | dates     | 
+due_date    | dates     |
+user_id     | integer   | not null, indexed
 
 ## lists
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null, indexed, unique
+user_id     | integer   | not null, indexed
 
 ## tasked lists
 column name | data type | details

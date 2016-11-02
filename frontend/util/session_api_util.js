@@ -1,29 +1,29 @@
 
-export const signup = (user, success, errors) => (
+export const signup = (user, success, errors) => {
   $.ajax({
-    url: "api/user",
+    url: "/api/user",
     method: "post",
-    data: user,
+    data:  user ,
     success,
     errors
-  })
-);
+  });
+};
 
-export const login = (user, success, errors) => (
+export const login = (user, success, errors) => {
+  $.ajax({
+    url: "/api/session",
+    method: "post",
+    data:  user ,
+    success,
+    errors
+  });
+};
+
+export const logout = (success, errors) => {
   $.ajax({
     url: "api/session",
-    method: "post",
-    data: user,
+    method: "delete",
     success,
     errors
-  })
-);
-
-export const logout = (success, errors) => (
-  $.ajax({
-    url: "api/session",
-    method: "destroy",
-    success,
-    errors
-  })
-);
+  });
+};

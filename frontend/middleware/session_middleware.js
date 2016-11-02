@@ -10,24 +10,24 @@ import {
 // api utils
 import { login, signup, logout } from '../util/session_api_util';
 
-export default ({getState, dispatch}) => next => action => {
-  const successCallback = user => {
-    debugger;
-    return dispatch(receiveCurrentUser(user));
-  };
-  const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
+let defaultState = {};
 
-  switch(action.type){
+const SessionMiddleware = ({dispatch}) => next => action => {
+  const loginSuccess = user => dispatch(receiveCurrentUser(user));
+  const errorCB = errors => dispatch(receiveErrors(errors.responseJSON));
+  switch (action.type) {
     case LOGIN:
-      login(action.user, successCallback, errorCallback);
+      login(action.user, loginSuccess, errorCB);
+      return next(action);
+    case SIGNUP:
+      signup(action.user, loginSuccess, errorCB);
       return next(action);
     case LOGOUT:
-      logout(() => next(action));
+      logout(() => next(action), errorCB);
       break;
-    case SIGNUP:
-      signup(action.user, successCallback, errorCallback);
-      return next(action);
     default:
       return next(action);
   }
 };
+
+export default SessionMiddleware;

@@ -8,15 +8,17 @@ const sessionLinks = () => (
   </nav>
 );
 
-const personalGreeting = () => (
+const personalGreeting = (currentUser, logout) => (
   <hgroup className="header-group">
     <h2>Hello, {currentUser.username}!</h2>
     <button className="header-button" onClick={logout}>Log Out</button>
   </hgroup>
 );
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+const Greeting = ({ currentUser, logout }) => {
+  return (
+    currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  );
+};
 
 export default Greeting;
