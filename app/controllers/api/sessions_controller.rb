@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   def new
 
   end
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if @user
       login(@user)
-      render json:
+      render json: "api/users/show"
     else
       render json: ["Invalid username or password"]
     end
