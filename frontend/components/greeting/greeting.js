@@ -1,13 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const sessionLinks = () => (
-  <nav>
-    <Link to="/login" activeClassName="current">Login</Link>
-    <Link to="/signup" activeClassName="current">Sign Up</Link>
-  </nav>
-);
-
 const personalGreeting = (currentUser, logout) => (
   <hgroup className="header-group">
     <h2>Hello, {currentUser.username}!</h2>
@@ -17,7 +10,7 @@ const personalGreeting = (currentUser, logout) => (
 
 const Greeting = ({ currentUser, logout }) => {
   return (
-    currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+    currentUser ? personalGreeting(currentUser, logout) : <div></div>
   );
 };
 
