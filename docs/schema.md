@@ -12,7 +12,7 @@ session_token   | string    | not null, indexed, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null, indexed, unique
+title       | string    | not null, indexed
 description | text      |
 due_date    | dates     |
 user_id     | integer   | not null, indexed

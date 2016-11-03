@@ -18,7 +18,9 @@ class Greeting extends React.Component {
     return (
       <hgroup className="header-group">
         <h2>Hello, {currentUser.username}!</h2>
-        <button className="header-button" onClick={this.handleLogout}>Log Out</button>
+        <button
+          className="header-button"
+          onClick={this.handleLogout}>Log Out</button>
       </hgroup>
     );
   }

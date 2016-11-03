@@ -1,4 +1,3 @@
-
 export const signup = (user, success, error) => {
   $.ajax({
     url: "/api/user",

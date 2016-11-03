@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
     this.password_error_msg = "";
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   componentDidUpdate() {
@@ -55,6 +56,13 @@ class SessionForm extends React.Component {
     });
   }
 
+  clearForm() {
+    this.setState({
+      username: "",
+      password: ""
+    });
+  }
+
   navLink() {
     let spanText;
     let linkText;
@@ -74,7 +82,9 @@ class SessionForm extends React.Component {
       <div className="change-form-type">
         <h3><span>OR</span></h3>
 
-        <span>{spanText}<Link to={path}>{linkText}</Link></span>
+        <span>{spanText}<Link to={path}
+            onClick={this.clearForm}
+          >{linkText}</Link></span>
       </div>
     );
   }
@@ -116,6 +126,10 @@ class SessionForm extends React.Component {
           </input>
 
           {this.navLink()}
+
+          <button
+            type="button"
+            onClick={this.props.guestLogin}>Guest Login</button>
         </form>
       </div>
     );

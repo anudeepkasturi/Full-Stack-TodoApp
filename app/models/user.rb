@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#
+
 class User < ActiveRecord::Base
   validates_presence_of :session_token, :password_digest
   validates :username, presence: true, uniqueness: true
@@ -7,6 +17,9 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   attr_reader :password
+
+  has_many :lists
+  has_many :tasks
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)

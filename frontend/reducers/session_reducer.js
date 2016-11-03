@@ -24,8 +24,7 @@ const SessionReducer = (state = defaultState, action) => {
     case LOGOUT:
       return defaultState;
     case CLEAR_ERRORS:
-      newState.errors = [];
-      return newState;
+      return defaultState;
     default:
       return state;
   }

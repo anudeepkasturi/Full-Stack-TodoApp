@@ -4,6 +4,7 @@ export const LOGOUT = "LOGOUT";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const GUEST_LOGIN = "GUEST_LOGIN";
 
 export const signup = user => ({
   type: SIGNUP,
@@ -31,4 +32,8 @@ export const receiveErrors = errors => ({
 
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
+});
+
+export const guestLogin = () => ({
+  type: GUEST_LOGIN
 });
