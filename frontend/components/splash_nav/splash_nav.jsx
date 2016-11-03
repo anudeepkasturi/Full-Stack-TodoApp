@@ -8,13 +8,19 @@ const sessionLinks = () => (
   </nav>
 );
 
-const SplashNav = () => {
-    return (
-      <div className="splash-nav">
+export const SplashNav = () => (
+  <div className="splash-nav-container">
+    <div className="splash-nav">
+      <HomeLink />
+      <div className="session-links">
         {sessionLinks()}
       </div>
-    );
-};
+    </div>
+  </div>
+);
 
-
-export default SplashNav;
+export const HomeLink = () => (
+  <div className="home-link">
+    <Link to="/" activeClassName="current">Taskable</Link>
+  </div>
+);

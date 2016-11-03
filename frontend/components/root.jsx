@@ -1,10 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { clearErrors } from '../actions/session_actions';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
-import SplashNav from './splash_nav/splash_nav';
-import { clearErrors } from '../actions/session_actions';
+import {HomeLink, SplashNav} from './splash_nav/splash_nav';
+import GreetingContainer from './greeting/greeting_container';
 
 
 
@@ -44,6 +45,10 @@ const Root = ({ store }) => {
             path="/signup"
             component={ SessionFormContainer }
             onEnter={ handleRedirect }
+          />
+          <Route path="/home"
+            component={GreetingContainer}
+            onEnter={ _ensureLoggedIn }
           />
         </Route>
       </Router>

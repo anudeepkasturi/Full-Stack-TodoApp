@@ -1,0 +1,42 @@
+.splash-nav-container {
+  display: flex;
+  width: 100%;
+  background-color: #009dff;
+  justify-content: center;
+
+
+  .splash-nav {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+
+    .home-link, .session-links {
+      padding: 0;
+      margin: 0;
+    }
+
+
+    .home-link a, .session-links a {
+      display: inline-block;
+      align-items: center;
+      margin: 0;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .home-link a:hover, .session-links a:hover {
+      background-color: #007ecc;
+    }
+
+    .session-links a {
+
+    }
+  }
+
+
+
+}

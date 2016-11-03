@@ -16,10 +16,8 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  update(field) {
-    return (e) => this.setState({
-      [field]: e.currentTarget.value
-    });
+  componentDidUpdate() {
+    this.redirectIfLoggedIn();
   }
 
   componentWillReceiveProps(newProps) {
@@ -27,10 +25,34 @@ class SessionForm extends React.Component {
     this.handleErrors(errors);
   }
 
+  redirectIfLoggedIn() {
+    if(this.props.loggedIn) {
+      this.props.router.push("/home");
+    }
+  }
+
+  update(field) {
+    return (e) => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
+  }
+
+  handleErrors(errors) {
+    this.username_error_msg = "";
+    this.password_error_msg = "";
+    return errors.map(error => {
+      if(error.includes("Username")) {
+        this.username_error_msg = error;
+      } else {
+        this.password_error_msg = error;
+      }
+    });
   }
 
   navLink() {
@@ -50,22 +72,11 @@ class SessionForm extends React.Component {
 
     return (
       <div className="change-form-type">
-        <p>or</p>
+        <h3><span>OR</span></h3>
+
         <span>{spanText}<Link to={path}>{linkText}</Link></span>
       </div>
     );
-  }
-
-  handleErrors(errors) {
-    this.username_error_msg = "";
-    this.password_error_msg = "";
-    return errors.map(error => {
-      if(error.includes("Username")) {
-        this.username_error_msg = error;
-      } else {
-        this.password_error_msg = error;
-      }
-    });
   }
 
   render () {

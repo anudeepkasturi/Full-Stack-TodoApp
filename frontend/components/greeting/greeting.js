@@ -1,17 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const personalGreeting = (currentUser, logout) => (
-  <hgroup className="header-group">
-    <h2>Hello, {currentUser.username}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-  </hgroup>
-);
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
 
-const Greeting = ({ currentUser, logout }) => {
-  return (
-    currentUser ? personalGreeting(currentUser, logout) : <div></div>
-  );
-};
+  handleLogout(e) {
+    e.preventDefault();
+    this.props.logout();
+    this.props.router.replace("/");
+  }
+
+  render () {
+    let { currentUser } = this.props;
+    return (
+      <hgroup className="header-group">
+        <h2>Hello, {currentUser.username}!</h2>
+        <button className="header-button" onClick={this.handleLogout}>Log Out</button>
+      </hgroup>
+    );
+  }
+}
+
 
 export default Greeting;

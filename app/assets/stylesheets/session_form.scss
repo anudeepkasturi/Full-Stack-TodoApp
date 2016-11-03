@@ -1,9 +1,7 @@
 .session-form-container {
   display: block;
   margin-top: 0em;
-  display: block;
   width: 100%;
-
 
   * {
     margin: 5px;
@@ -54,15 +52,33 @@
     }
 
     .change-form-type {
-      display: inline;
-      flex-direction: row;
+      max-width: 420px;
+      width: 80%;
+      text-align: center;
 
-      p {
-        text-align: center;
+      h3 {
+        width: 100%;
+        position: relative;
+      }
+
+      h3 span {
+        display: inline-block;
+        padding: 0 10px;
+        background: #fff;
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      h3:before {
+        content:"";
+        display:block;
+        position:absolute;
+        z-index:-1;
+        left:0;
+        right:0;
+        top:50%;
+        height:1px;
+        background:#ccc;
       }
     }
-
-
-
   }
 }
