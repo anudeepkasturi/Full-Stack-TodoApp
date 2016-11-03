@@ -7,9 +7,12 @@ class SessionForm extends React.Component {
 
     this.state = {
       username: "",
-      password: "",
-      email: "none",
+      password: ""
     };
+
+    this.username_error_msg = "";
+    this.password_error_msg = "";
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -19,6 +22,11 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    let errors = newProps.errors;
+    this.handleErrors(errors);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
@@ -26,21 +34,38 @@ class SessionForm extends React.Component {
   }
 
   navLink() {
+    let spanText;
+    let linkText;
+    let path;
+
     if (this.props.formType === "login") {
-      return (
-        <div className="change-form-type">
-          <p>or</p>
-          <span><Link to="/signup">Sign Up</Link>for free!</span>
-      </div>
-      );
+      spanText = "Don't have an account?";
+      linkText = "Sign Up";
+      path = "/signup";
     } else {
-      return (
-        <div className="change-form-type">
-          <p>or</p>
-          <span>Been here before?<Link to="/login">Log In</Link></span>
-        </div>
-      );
+      spanText = "Been here before?";
+      linkText = "Log In";
+      path = "/login";
     }
+
+    return (
+      <div className="change-form-type">
+        <p>or</p>
+        <span>{spanText}<Link to={path}>{linkText}</Link></span>
+      </div>
+    );
+  }
+
+  handleErrors(errors) {
+    this.username_error_msg = "";
+    this.password_error_msg = "";
+    return errors.map(error => {
+      if(error.includes("Username")) {
+        this.username_error_msg = error;
+      } else {
+        this.password_error_msg = error;
+      }
+    });
   }
 
   render () {
@@ -61,6 +86,7 @@ class SessionForm extends React.Component {
             onChange={this.update("username")}
             className="login-input"
             />
+          <p className="error-msg">{this.username_error_msg}</p>
 
           <input
             id="password"
@@ -70,6 +96,7 @@ class SessionForm extends React.Component {
             onChange={this.update("password")}
             className="login-input"
             />
+          <p className="error-msg">{this.password_error_msg}</p>
 
           <input
             className="session-form-submit"

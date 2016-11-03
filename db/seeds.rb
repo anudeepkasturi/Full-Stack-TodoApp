@@ -9,5 +9,4 @@
 me = User.create!({
   username: "Ish",
   password: "123123",
-  email: "a.a@a.a"
 })

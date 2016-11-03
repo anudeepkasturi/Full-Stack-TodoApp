@@ -15,6 +15,7 @@ let defaultState = {};
 const SessionMiddleware = ({dispatch}) => next => action => {
   const loginSuccess = user => dispatch(receiveCurrentUser(user));
   const errorCB = errors => dispatch(receiveErrors(errors.responseJSON));
+
   switch (action.type) {
     case LOGIN:
       login(action.user, loginSuccess, errorCB);
