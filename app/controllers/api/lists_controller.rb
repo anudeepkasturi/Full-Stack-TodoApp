@@ -1,4 +1,4 @@
-class ListsController < ApplicationController
+class Api::ListsController < ApplicationController
   def new
 
   end
@@ -14,7 +14,12 @@ class ListsController < ApplicationController
   end
 
   def show
-
+    find_list
+    if @list
+      render "api/lists/show"
+    else
+      render json: ['No list was found'], status: 422
+    end
   end
 
   def index
@@ -25,7 +30,7 @@ class ListsController < ApplicationController
   end
 
   def update
-    @list = List.find_by_id(list_params[:id])
+    find_list
     if @list.user == current_user
       if @list.save
         render "api/lists/show"
@@ -38,7 +43,7 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list = List.find_by_id(list_params[:id])
+    find_list
     if @list.user == current_user
       @list.destroy
       render json: {}
@@ -50,5 +55,9 @@ class ListsController < ApplicationController
   private
   def list_params
     params.require(:list).permit(:id, :title, :user_id)
+  end
+
+  def find_list
+    @list = List.find_by_id(params[:id])
   end
 end

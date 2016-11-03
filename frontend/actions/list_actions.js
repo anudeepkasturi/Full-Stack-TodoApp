@@ -6,7 +6,7 @@ export const UPDATE_LIST = "UPDATE_LIST";
 
 export const RECEIVE_ALL_LISTS = "RECEIVE_ALL_LISTS";
 export const RECEIVE_LIST = "RECEIVE_LIST";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_LIST_ERRORS = "RECEIVE_LIST_ERRORS";
 
 //middleware actions
 export const fetchLists = () => ({
@@ -39,6 +39,6 @@ export const receiveList = list => ({
   list
 });
 export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_LIST_ERRORS,
   errors
 });

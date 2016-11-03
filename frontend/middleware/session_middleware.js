@@ -1,12 +1,13 @@
 // actions
 import {
   receiveCurrentUser,
-  receiveErrors,
   LOGIN,
   LOGOUT,
   SIGNUP,
   GUEST_LOGIN
   } from '../actions/session_actions';
+
+import { receiveErrors } from '../actions/error_actions';
 
 // api utils
 import { login, signup, logout } from '../util/session_api_util';
@@ -16,7 +17,8 @@ let guest = {user:{username: "Guest", password: "123123"}};
 
 const SessionMiddleware = ({ dispatch }) => next => action => {
   const loginSuccess = user => dispatch(receiveCurrentUser(user));
-  const errorCB = errors => dispatch(receiveErrors(errors.responseJSON));
+  const errorCB = errors =>
+  dispatch(receiveErrors('session', errors.responseJSON));
 
   switch (action.type) {
     case LOGIN:

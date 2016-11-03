@@ -6,8 +6,9 @@ import {
   UPDATE_LIST,
   receiveAllLists,
   receiveList,
-  receiveErrors
 } from '../actions/list_actions';
+
+import { receiveErrors } from '../actions/error_actions';
 
 import {
   fetchLists,
@@ -18,19 +19,21 @@ import {
 } from '../util/list_api_util';
 
 const ListMiddelware = ({ dispatch }) => next => action => {
-  const allListsSuccess = lists => dispatch(receiveAllLists());
-  const listSuccess = list => dispatch(receiveList());
-  const errorCB = errors => dispatch(receiveErrors(errors.responseJSON));
+  const allListsSuccess = lists => dispatch(receiveAllLists(lists));
+  const listSuccess = list => dispatch(receiveList(list));
+  const errorCB = errors =>
+  dispatch(receiveErrors('list', errors.responseJSON));
 
   switch (action.type) {
     case FETCH_LISTS:
       fetchLists(allListsSuccess, errorCB);
-      return next(action);
+      break;
     case FETCH_LIST:
       fetchList(action.id, listSuccess, errorCB);
-      return next(action);
+      break;
     case DESTROY_LIST:
-      
+      destroyList(action.id, () => next(action), errorCB);
+      break;
     case CREATE_LIST:
       createList(action.list, listSuccess, errorCB);
       return next(action);

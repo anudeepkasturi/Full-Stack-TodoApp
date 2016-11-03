@@ -1,9 +1,11 @@
 # Sample state
 ```js
 {
-  current_user: {
-    username: "ish"
-    id: 1
+  session: {
+    current_user: {
+      username: "ish"
+      id: 1
+    }
   }
   lists: {
     1: {
@@ -21,6 +23,12 @@
   }
   list: {} // selected list
   task: {} // selected task
-  search: ""
+  search: "",
+  errors: {
+    session: [],
+    list: [],
+    task: [],
+    search: []
+  }
 }
 ```

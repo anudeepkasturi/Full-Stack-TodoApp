@@ -4,7 +4,8 @@ import SessionMiddleware from './session_middleware';
 import ListMiddelware from './list_middleware';
 
 const RootMiddleware = applyMiddleware(
-  SessionMiddleware
+  SessionMiddleware,
+  ListMiddelware
 );
 
 export default RootMiddleware;

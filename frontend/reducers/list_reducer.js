@@ -1,23 +1,23 @@
 import {
-  RECEIVE_ALL_LISTS,
   RECEIVE_LIST,
-  RECEIVE_ERRORS
+  DESTROY_LIST
 } from '../actions/list_actions';
+import merge from 'lodash/merge';
 
-let defaultState = {};
+let defaultListState = {};
 
-const ListReducer = (state = defaultState, action) => {
+const ListReducer = (state = defaultListState, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
 
   switch (action.type) {
-    case RECEIVE_ALL_LISTS:
-
-      break;
+    case RECEIVE_LIST:
+      return action.list;
+    case DESTROY_LIST:
+      return defaultListState;
     default:
       return state;
   }
-
 };
-
 
 export default ListReducer;
