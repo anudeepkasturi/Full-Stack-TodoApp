@@ -5,9 +5,8 @@ import { clearErrors } from '../actions/error_actions';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import {HomeLink, SplashNav} from './splash_nav/splash_nav';
-import GreetingContainer from './greeting/greeting_container';
-
-
+import NavigationBarContainer from './user_page/nav_bar/nav_bar_container';
+import ListsIndexContainer from './user_page/lists/lists_index_container';
 
 const Root = ({ store }) => {
 
@@ -19,7 +18,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/');
+      replace('/inbox');
     }
   };
 
@@ -46,11 +45,15 @@ const Root = ({ store }) => {
             component={ SessionFormContainer }
             onEnter={ handleSessionRedirect }
           />
-          <Route path="/home"
-            component={GreetingContainer}
-            onEnter={ _ensureLoggedIn }
-          />
-        </Route>
+          <Route path="/inbox"
+            component={ NavigationBarContainer }
+            onEnter={ _ensureLoggedIn } />
+
+          <Route component={ NavigationBarContainer }/>
+            <Route path="/lists" component={ListsIndexContainer}>
+
+            </Route>
+          </Route>
       </Router>
     </Provider>
   );

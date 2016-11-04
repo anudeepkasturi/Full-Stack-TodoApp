@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { withRouter, Link } from 'react-router';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -18,13 +18,11 @@ class Greeting extends React.Component {
     return (
       <hgroup className="header-group">
         <h2>Hello, {currentUser.username}!</h2>
-        <button
-          className="header-button"
-          onClick={this.handleLogout}>Log Out</button>
+        <Link to="/" onClick={this.handleLogout}>Log Out</Link>
       </hgroup>
     );
   }
 }
 
 
-export default Greeting;
+export default withRouter(Greeting);

@@ -27,7 +27,7 @@ export const destroyList = (id, success, error) => {
 
 export const createList = (list, success, error) => {
   $.ajax({
-    url: `api/lists/${list.id}`,
+    url: `api/lists`,
     method: "post",
     data: list,
     success,

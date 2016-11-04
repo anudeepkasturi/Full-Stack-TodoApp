@@ -1,13 +1,13 @@
-@import 'globals';
+@import '../globals';
 
-.splash-nav-container {
+.nav-bar {
   display: flex;
   width: 100%;
   background-color: $theme-color;
   justify-content: center;
+  color: $theme-font-color;
 
-
-  .splash-nav {
+  .header-group {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -15,31 +15,14 @@
     width: 90%;
     height: 100%;
 
-    .home-link, .session-links {
-      padding: 0;
-      margin: 0;
-    }
-
-
-    .home-link a, .session-links a {
-      display: inline-block;
-      align-items: center;
-      margin: 0;
-      padding: 10px;
+    a {
       color: $theme-font-color;
       text-decoration: none;
+      padding: 5px;
     }
-
-    .home-link a:hover, .session-links a:hover {
+    a:hover {
       background-color: #007ecc;
       border-radius: 4px;
     }
-
-    .session-links a {
-
-    }
   }
-
-
-
 }

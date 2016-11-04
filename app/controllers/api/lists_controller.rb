@@ -14,7 +14,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    find_list
+    @list = List.find_by_id(params[:id])
     if @list
       render "api/lists/show"
     else
@@ -31,7 +31,8 @@ class Api::ListsController < ApplicationController
 
   def update
     find_list
-    if @list.user == current_user
+    debugger
+    if @list && @list.user == current_user
       if @list.save
         render "api/lists/show"
       else
@@ -43,7 +44,7 @@ class Api::ListsController < ApplicationController
   end
 
   def destroy
-    find_list
+    @list = List.find_by_id(params[:id])
     if @list.user == current_user
       @list.destroy
       render json: {}
@@ -58,6 +59,6 @@ class Api::ListsController < ApplicationController
   end
 
   def find_list
-    @list = List.find_by_id(params[:id])
+    @list = List.find_by_id(params[:list][:id])
   end
 end

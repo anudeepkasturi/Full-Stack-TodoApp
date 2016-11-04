@@ -1,6 +1,8 @@
 import {
   RECEIVE_LIST,
-  DESTROY_LIST
+  DESTROY_LIST,
+  UNSELECT_LIST,
+  CREATE_LIST
 } from '../actions/list_actions';
 import merge from 'lodash/merge';
 
@@ -14,6 +16,7 @@ const ListReducer = (state = defaultListState, action) => {
     case RECEIVE_LIST:
       return action.list;
     case DESTROY_LIST:
+    case UNSELECT_LIST:
       return defaultListState;
     default:
       return state;
