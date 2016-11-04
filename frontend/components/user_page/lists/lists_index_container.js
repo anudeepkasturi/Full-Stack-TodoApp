@@ -1,5 +1,10 @@
 import { connect } from 'react-redux';
 import ListsIndex from './lists_index';
+import {
+  createList,
+  destroyList,
+  updateList
+} from '../../../actions/list_actions';
 
 const mapStateToProps = state => ({
   lists: state.lists,
@@ -7,7 +12,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = ({ dispatch }) => ({
-
+  createList: () => dispatch(createList())
 });
 
 export default connect(
