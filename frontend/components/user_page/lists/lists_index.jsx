@@ -12,20 +12,23 @@ class ListsIndex extends React.Component {
   render () {
     let { lists } = this.props;
 
-    return (
-      <ul>
-        <li key="0" className="list-index-item">
-          <Link to="inbox">Inbox</Link>
-        </li>
 
-        {Object.keys(lists).map(listId => (
-          <ListIndexItem
-            id={listId}
-            title={lists[listId].title}
-            key={listId}/>
-          )
-        )}
-      </ul>
+
+    return (
+      <div>
+        <ul>
+          <li key="0" className="list-index-item">
+            <Link to="/inbox">Inbox</Link>
+          </li>
+
+          {Object.keys(lists).map(listId => (
+            <ListIndexItem
+              id={listId}
+              title={lists[listId].title}
+              key={listId}/>
+          ))}
+        </ul>
+      </div>
     );
   }
 }

@@ -31,7 +31,7 @@
     }
 
     .home-link a:hover, .session-links a:hover {
-      background-color: #007ecc;
+      background-color: $theme-hover-color;
       border-radius: 4px;
     }
 

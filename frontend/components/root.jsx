@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { clearErrors } from '../actions/error_actions';
 import { fetchLists } from '../actions/list_actions';
+import { fetchTasks } from '../actions/task_actions';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import {HomeLink, SplashNav} from './splash_nav/splash_nav';
@@ -29,6 +30,7 @@ const Root = ({ store }) => {
       replace('/login');
     } else {
       store.dispatch(fetchLists());
+      store.dispatch(fetchTasks());
     }
   };
 
@@ -56,11 +58,10 @@ const Root = ({ store }) => {
 
       <Route path="/inbox"
         component={ UserPage }
-        onEnter={ handleLogin }>
-        <Route path="/:title" >
-
+        onEnter={ handleLogin }/>
+      <Route path="/:title" component={UserPage}>
+          <Route path="/:id" />
         </Route>
-      </Route>
     </Route>
   );
 

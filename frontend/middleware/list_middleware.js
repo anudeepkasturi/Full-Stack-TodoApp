@@ -5,7 +5,7 @@ import {
   CREATE_LIST,
   UPDATE_LIST,
   receiveAllLists,
-  receiveList,
+  receiveList
 } from '../actions/list_actions';
 
 import { receiveErrors } from '../actions/error_actions';

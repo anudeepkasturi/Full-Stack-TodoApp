@@ -11,12 +11,12 @@ let defaultListsState = {};
 
 const ListsReducer = (state = defaultListsState, action) => {
   Object.freeze(state);
+
   let newState = merge({}, state);
 
   switch (action.type) {
     case RECEIVE_ALL_LISTS:
-      newState = action.lists;
-      return newState;
+      return action.lists;
     case UPDATE_LIST:
     case CREATE_LIST:
     case RECEIVE_LIST:

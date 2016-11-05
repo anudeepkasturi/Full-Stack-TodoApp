@@ -6,10 +6,14 @@ import {
   updateList
 } from '../../../actions/list_actions';
 
-const mapStateToProps = state => ({
-  lists: state.lists,
-  errors: state.errors.list
-});
+const mapStateToProps = (state, ownProps) => {
+// debugger;
+  return ({
+
+    lists: state.lists,
+    errors: state.errors.list
+  });
+};
 
 const mapDispatchToProps = ({ dispatch }) => ({
   createList: () => dispatch(createList())

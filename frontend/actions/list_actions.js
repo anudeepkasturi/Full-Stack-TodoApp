@@ -6,7 +6,6 @@ export const UPDATE_LIST = "UPDATE_LIST";
 
 export const RECEIVE_ALL_LISTS = "RECEIVE_ALL_LISTS";
 export const RECEIVE_LIST = "RECEIVE_LIST";
-export const RECEIVE_LIST_ERRORS = "RECEIVE_LIST_ERRORS";
 export const UNSELECT_LIST = "UNSELECT_LIST";
 
 //middleware actions
@@ -38,10 +37,6 @@ export const receiveAllLists = lists => ({
 export const receiveList = list => ({
   type: RECEIVE_LIST,
   list
-});
-export const receiveErrors = errors => ({
-  type: RECEIVE_LIST_ERRORS,
-  errors
 });
 export const unselectList = () => ({
   type: UNSELECT_LIST
