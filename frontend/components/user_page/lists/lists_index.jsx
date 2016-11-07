@@ -11,8 +11,7 @@ class ListsIndex extends React.Component {
 
   render () {
     let { lists } = this.props;
-
-
+    console.log(this.props);
 
     return (
       <div>

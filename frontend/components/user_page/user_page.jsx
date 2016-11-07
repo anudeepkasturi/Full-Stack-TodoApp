@@ -7,11 +7,16 @@ import ListContainer from './lists/list_container';
 
 class UserPage extends React.Component {
   render () {
+    let { title } = this.props.params;
+    if (title === undefined) {
+      title = 'inbox';
+    }
+    
     return (
       <div className="user-page">
         <NavigationBarContainer />
-        <SidebarContainer />
-        <ListContainer />
+        <SidebarContainer title={ title } />
+        <ListContainer/>
       </div>
     );
   }

@@ -7,9 +7,7 @@ import {
 } from '../../../actions/list_actions';
 
 const mapStateToProps = (state, ownProps) => {
-// debugger;
   return ({
-
     lists: state.lists,
     errors: state.errors.list
   });

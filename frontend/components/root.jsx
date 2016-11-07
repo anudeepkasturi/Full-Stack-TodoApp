@@ -50,6 +50,7 @@ const Root = ({ store }) => {
     />
   );
 
+
   const appRoute = (
     <Route path="/" component={App}>
       <IndexRoute component={SplashNav}/>
@@ -58,10 +59,14 @@ const Root = ({ store }) => {
 
       <Route path="/inbox"
         component={ UserPage }
-        onEnter={ handleLogin }/>
-      <Route path="/:title" component={UserPage}>
+        onEnter={ handleLogin }>
+      </Route>
+
+      <Route path="/:title"
+        component={ UserPage } 
+        onEnter={ handleLogin }>
           <Route path="/:id" />
-        </Route>
+      </Route>
     </Route>
   );
 
