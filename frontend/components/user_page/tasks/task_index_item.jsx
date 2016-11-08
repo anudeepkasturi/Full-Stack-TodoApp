@@ -9,7 +9,7 @@ class TaskIndexItem extends React.Component {
 
   render () {
     let { title, id } = this.props.task;
-    let path = `${this.props.params.title}/${id}`;
+    let path = `home/${this.props.params.title || "inbox"}/${id}`;
     return (
       <li className="task-index-item">
         <Link to={path}>{ title }</Link>

@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
     let { title } = this.props;
     return (
       <div className="sidebar">
-        <ListsIndexContainer title={ title }/>
+        <ListsIndexContainer />
       </div>
     );
   }

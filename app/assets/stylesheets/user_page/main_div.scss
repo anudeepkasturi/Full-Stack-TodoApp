@@ -1,0 +1,48 @@
+.page {
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #D5E8F4;
+}
+
+.main-div {
+  display: inline-block;
+  margin-top: 9px;
+  margin-right: 9px;
+  height: 100%;
+  width: 100%;
+  background-color: #E0EBF7;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  >h2 {
+    min-height: 22px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 11px 6px 0 12px;
+    font-size: 1.125rem;
+  }
+
+  .list {
+    background-color: #fff;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+    .tasks-index {
+      padding: 3px 10px;
+
+      li {
+        padding: 4px 0;
+      }
+
+      li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+      }
+    }
+  }
+}

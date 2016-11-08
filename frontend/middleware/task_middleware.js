@@ -26,9 +26,13 @@ const TaskMiddleware = ({ dispatch }) => next => action => {
   const errorCB = errors =>
     dispatch(receiveErrors('task', errors.responseJSON));
 
+    if(action.listId === undefined) {
+      action.listId = 0;
+    }
+
   switch (action.type) {
     case FETCH_TASKS:
-      fetchTasks(allTasksSuccess, errorCB);
+      fetchTasks(allTasksSuccess, errorCB, action.listId);
       break;
     case FETCH_TASK:
       fetchTask(action.id, taskSuccess, errorCB);

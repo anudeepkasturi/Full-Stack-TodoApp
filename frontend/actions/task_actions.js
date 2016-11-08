@@ -8,8 +8,9 @@ export const RECEIVE_ALL_TASKS = "RECEIVE_ALL_TASKS";
 export const RECEIVE_TASK = "RECEIVE_TASK";
 export const UNSELECT_TASK = "UNSELECT_TASK";
 
-export const fetchTasks = () => ({
-  type: FETCH_TASKS
+export const fetchTasks = (listId) => ({
+  type: FETCH_TASKS,
+  listId
 });
 export const fetchTask = (id) => ({
   type: FETCH_TASK,

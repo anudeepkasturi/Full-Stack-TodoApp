@@ -14,7 +14,7 @@ let defaultErrorsState = {
 
 const ErrorsReducer = (state = defaultErrorsState, action) => {
   Object.freeze(state);
-
+  
   let newState = merge({}, state);
   newState[action.typeErrors] = [];
 

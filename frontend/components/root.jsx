@@ -20,7 +20,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/inbox');
+      replace('/home');
     }
   };
 
@@ -28,11 +28,20 @@ const Root = ({ store }) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/login');
-    } else {
-      store.dispatch(fetchLists());
-      store.dispatch(fetchTasks());
     }
   };
+  
+  const handleIndex = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    } else {
+      store.dispatch(fetchTasks());
+      store.dispatch(fetchLists());
+    }
+  };
+
+
 
   const loginRoute = (
     <Route
@@ -57,16 +66,21 @@ const Root = ({ store }) => {
       {loginRoute}
       {signupRoute}
 
-      <Route path="/inbox"
+      <Route path="/home"
+        component={ UserPage }
+        onEnter={ handleIndex }>
+      </Route>
+
+      <Route path="/home/:title"
         component={ UserPage }
         onEnter={ handleLogin }>
       </Route>
 
-      <Route path="/:title"
-        component={ UserPage } 
+      <Route path="home/:title/:id"
+        component={ UserPage }
         onEnter={ handleLogin }>
-          <Route path="/:id" />
       </Route>
+
     </Route>
   );
 

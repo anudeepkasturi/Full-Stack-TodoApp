@@ -17,8 +17,6 @@ const ListsReducer = (state = defaultListsState, action) => {
   switch (action.type) {
     case RECEIVE_ALL_LISTS:
       return action.lists;
-    case UPDATE_LIST:
-    case CREATE_LIST:
     case RECEIVE_LIST:
       newState[action.list.id] = action.list;
       return newState;

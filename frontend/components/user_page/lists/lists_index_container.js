@@ -1,21 +1,24 @@
 import { connect } from 'react-redux';
-import ListsIndex from './lists_index';
 import {
   createList,
   destroyList,
-  updateList
+  updateList,
+  fetchLists
 } from '../../../actions/list_actions';
+import { clearErrors } from '../../../actions/error_actions';
+import ListsIndex from './lists_index';
 
-const mapStateToProps = (state, ownProps) => {
-  return ({
-    lists: state.lists,
-    errors: state.errors.list
-  });
-};
-
-const mapDispatchToProps = ({ dispatch }) => ({
-  createList: () => dispatch(createList())
+const mapStateToProps = (state) => ({
+  lists: state.lists,
+  errors: state.errors.list
 });
+
+const mapDispatchToProps = ( dispatch ) => ({
+  createList: (list) => dispatch(createList(list)),
+  clearErrors: () => dispatch(clearErrors('list')),
+  fetchLists: () => dispatch(fetchLists())
+});
+
 
 export default connect(
   mapStateToProps,

@@ -11,7 +11,6 @@
     1: {
       id: 1
       title: "Work"
-      tasks: [1, 4, 5] // by id
     }
   }
   tasks: {
@@ -21,7 +20,6 @@
       description: "full stack"
     }
   }
-  list: {} // selected list
   task: {} // selected task
   search: "",
   errors: {
