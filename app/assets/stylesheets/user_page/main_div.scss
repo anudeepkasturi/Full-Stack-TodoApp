@@ -6,6 +6,7 @@
 }
 
 .main-div {
+  box-sizing: border-box;
   display: inline-block;
   margin-top: 9px;
   margin-right: 9px;
@@ -44,5 +45,14 @@
         font-weight: bold;
       }
     }
+  }
+
+  .task {
+    background-color: #fff;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
   }
 }

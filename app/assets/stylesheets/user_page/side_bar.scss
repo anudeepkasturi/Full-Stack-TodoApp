@@ -9,7 +9,6 @@
 
   ul li {
     white-space: nowrap;
-    overflow: hidden;
     padding: 0;
     outline: none;
   }
@@ -26,6 +25,8 @@
     padding: 3px 10px;
     text-decoration: none;
     display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .list-header button {

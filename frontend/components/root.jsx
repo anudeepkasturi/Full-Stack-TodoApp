@@ -30,7 +30,7 @@ const Root = ({ store }) => {
       replace('/login');
     }
   };
-  
+
   const handleIndex = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
@@ -40,8 +40,6 @@ const Root = ({ store }) => {
       store.dispatch(fetchLists());
     }
   };
-
-
 
   const loginRoute = (
     <Route

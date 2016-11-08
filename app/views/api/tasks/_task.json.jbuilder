@@ -3,5 +3,4 @@ json.extract! task,
   :id,
   :due_date,
   :description,
-  :user_id,
-  :lists
+  :user_id

@@ -4,11 +4,12 @@ import { fetchTasks } from '../../../actions/task_actions';
 
 const mapStateToProps = state => ({
   tasks: state.tasks,
-  errors: state.errors.task
+  errors: state.errors.task,
+  list: state.list
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
-  fetchTasks: () => dispatch(fetchTasks())
+  fetchTasks: (listId) => dispatch(fetchTasks(listId))
 });
 
 export default connect(

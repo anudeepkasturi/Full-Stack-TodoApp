@@ -3,6 +3,7 @@ import React from 'react';
 import NavigationBarContainer from './nav_bar/nav_bar_container';
 import SidebarContainer from './sidebar/sidebar';
 import ListContainer from './lists/list_container';
+import TaskDetailContainer from './tasks/task_detail_container';
 import { withRouter } from 'react-router';
 
 class UserPage extends React.Component {
@@ -16,6 +17,7 @@ class UserPage extends React.Component {
           <div className="main-div">
             <h2>{ title }</h2>
             <ListContainer />
+            <TaskDetailContainer />
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ export const UPDATE_TASK = "UPDATE_TASK";
 
 export const RECEIVE_ALL_TASKS = "RECEIVE_ALL_TASKS";
 export const RECEIVE_TASK = "RECEIVE_TASK";
-export const UNSELECT_TASK = "UNSELECT_TASK";
+export const SELECT_TASK = "SELECT_TASK";
 
 export const fetchTasks = (listId) => ({
   type: FETCH_TASKS,
@@ -37,6 +37,7 @@ export const receiveTask = task => ({
   type: RECEIVE_TASK,
   task
 });
-export const unselectList = () => ({
-  type: UNSELECT_TASK
+export const selectTask = id => ({
+  type: SELECT_TASK,
+  id
 });

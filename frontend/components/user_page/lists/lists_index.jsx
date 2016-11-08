@@ -41,9 +41,9 @@ class ListsIndex extends React.Component {
   }
 
   updateField() {
-    return (e) => this.setState(
-      {form: { title: e.currentTarget.value }}
-    );
+    return (e) => this.setState({
+      form: { title: e.currentTarget.value }
+    });
   }
 
   render () {
@@ -75,8 +75,7 @@ class ListsIndex extends React.Component {
 
       <Modal isOpen={ this.state.modalOpen }
         onRequestClose={ this.closeModal }
-        className="ModalClass"
-        >
+        className="ModalClass" >
         <div className="modal-div">
           <h2>Add a list</h2>
           <form onSubmit={ this.handleSubmit }>

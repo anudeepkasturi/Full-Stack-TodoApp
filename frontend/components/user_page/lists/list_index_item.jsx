@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
 class ListIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -9,6 +10,7 @@ class ListIndexItem extends React.Component {
 
   handleClick() {
     this.props.fetchTasks(this.props.id);
+    this.props.selectList(this.props.id);
   }
 
   render () {

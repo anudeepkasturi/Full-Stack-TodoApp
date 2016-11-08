@@ -18,7 +18,7 @@ import {
   updateList
 } from '../util/list_api_util';
 
-const ListMiddelware = ({ dispatch }) => next => action => {
+const ListMiddelware = ( { dispatch } ) => next => action => {
   const allListsSuccess = lists => dispatch(receiveAllLists(lists));
   const listSuccess = list => dispatch(receiveList(list));
   const errorCB = errors =>

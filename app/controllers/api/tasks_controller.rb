@@ -4,9 +4,13 @@ class Api::TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = Task.new(task_params.except(:list_id))
     @task.user = current_user
     if @task.save
+      if task_params[:list_id]
+        list = List.find_by_id(task_params[:list_id])
+        @task.lists << list
+      end
       render "api/tasks/show"
     else
       render json: @task.errors.full_messages, status: 422
@@ -14,7 +18,12 @@ class Api::TasksController < ApplicationController
   end
 
   def show
-
+    @task = Task.find_by_id(params[:id])
+    if @task
+      render "api/tasks/show"
+    else
+      render json: ['No task was found'], status: 422
+    end
   end
 
   def index
@@ -59,7 +68,7 @@ class Api::TasksController < ApplicationController
       :user_id,
       :description,
       :due_date,
-      :user_id
+      :list_id
     )
   end
 end

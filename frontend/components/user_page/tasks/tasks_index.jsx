@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskIndexItem from './task_index_item';
+import TaskIndexItemContainer from './task_index_item_container';
 
 class TasksIndex extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class TasksIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTasks();
+    this.props.fetchTasks(this.props.list);
   }
 
   render () {
@@ -17,8 +17,11 @@ class TasksIndex extends React.Component {
       <div className="tasks-index">
         <ul>
           {Object.keys(tasks).map(taskId => (
-            <TaskIndexItem
-              task={tasks[taskId]}
+            <TaskIndexItemContainer
+              id={taskId}
+              title={tasks[taskId].title}
+              description={tasks[taskId].description}
+              due_date={tasks[taskId].due_date}
               key={taskId} />
           ))}
         </ul>
