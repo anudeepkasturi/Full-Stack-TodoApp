@@ -7,7 +7,8 @@
 
 .main-div {
   box-sizing: border-box;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   margin-top: 9px;
   margin-right: 9px;
   height: 100%;
@@ -24,9 +25,17 @@
     font-size: 1.125rem;
   }
 
+  .main-components {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
   .list {
+    margin: 0 1px;
     background-color: #fff;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 50%;
     height: 100%;
     border-top-left-radius: 6px;
@@ -48,11 +57,40 @@
   }
 
   .task {
+    margin: 0 1px;
     background-color: #fff;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 50%;
     height: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+
+    .task-title>input {
+      height: 48px;
+      outline: none;
+      border: none;
+      display: block;
+      font-size: 23px;
+      max-width: 420px;
+      width: 80%;
+      border-radius: 4px;
+      margin-left: 5px;
+    }
+
+    .task-title>input:hover {
+      border: 1px solid #ccc;
+    }
+
+
+    .task-details {
+      display: flex;
+      flex-direction: column;
+      >div {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
   }
 }

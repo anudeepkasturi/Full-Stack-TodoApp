@@ -9,7 +9,6 @@ class TaskIndexItem extends React.Component {
   }
 
   handleClick() {
-    console.log(this.props);
     this.props.fetchTask(this.props.id);
     this.props.selectTask(this.props.id);
   }

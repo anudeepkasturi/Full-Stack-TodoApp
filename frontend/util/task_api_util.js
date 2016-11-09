@@ -38,7 +38,7 @@ export const createTask = (task, success, error) => {
 
 export const updateTask = (task, success, error) => {
   $.ajax({
-    url: `api/tasks/${task.id}`,
+    url: `api/tasks/${task.task.id}`,
     method: "patch",
     data: task,
     success,

@@ -40,7 +40,7 @@ class Api::TasksController < ApplicationController
   def update
     @task = Task.find_by_id(task_params[:id])
     if @task.user == current_user
-      if @task.save
+      if @task.update(task_params)
         render "api/tasks/show"
       else
         render json: @task.errors.full_messages, status: 422

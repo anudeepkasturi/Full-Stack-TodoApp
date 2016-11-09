@@ -16,8 +16,10 @@ class UserPage extends React.Component {
           <SidebarContainer />
           <div className="main-div">
             <h2>{ title }</h2>
-            <ListContainer />
-            <TaskDetailContainer />
+            <div className="main-components">
+              <ListContainer />
+              <TaskDetailContainer />
+            </div>
           </div>
         </div>
       </div>
