@@ -37,7 +37,7 @@ export const createList = (list, success, error) => {
 
 export const updateList = (list, success, error) => {
   $.ajax({
-    url: `api/lists/${list.id}`,
+    url: `api/lists/${list.list.id}`,
     method: "patch",
     data: list,
     success,

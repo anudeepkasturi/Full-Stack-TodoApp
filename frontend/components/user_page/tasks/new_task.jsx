@@ -33,12 +33,14 @@ class NewTask extends React.Component {
     return (
       <div className="new-task">
         <form onSubmit={ this.handleSubmit }>
-          <input
-            type="text"
-            placeholder="New Task"
-            onChange={ this.updateField() }
-            value={ title }
-          />
+          <div className="new-task-title">
+            <input
+              type="text"
+              placeholder="Add a task..."
+              onChange={ this.updateField() }
+              value={ title }
+            />
+          </div>
           <input type="submit" value="Add Task" />
         </form>
       </div>

@@ -53,7 +53,7 @@ class Api::TasksController < ApplicationController
   def destroy
     @task = Task.find_by_id(task_params[:id])
     if @task.user == current_user
-      @task.destroy
+      @task.delete
       render json: {}
     else
       render json: ["You do not own this task"], status: 422

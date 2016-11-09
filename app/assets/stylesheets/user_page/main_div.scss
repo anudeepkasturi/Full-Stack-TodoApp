@@ -41,17 +41,44 @@
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 
-    .tasks-index {
-      padding: 3px 10px;
+    .new-task {
+      width: 100%;
+      display: flex;
 
-      li {
-        padding: 4px 0;
+      form {
+        width: 100%;
       }
 
-      li a {
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
+      .new-task-title {
+        display: flex;
+        margin: 5px 10px;
+        width: fill;
+        box-sizing: border-box;
+
+        input {
+          width: 100%;
+          outline: none;
+          border-radius: 3px;
+          border: 1px solid #d0d3d6;
+          line-height: 1.25rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .tasks-index {
+        padding: 3px 10px;
+
+        li {
+          padding: 4px 0;
+        }
+
+        li a {
+          text-decoration: none;
+          color: #000;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -66,20 +93,37 @@
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 
+    .task-content {
+      margin-top: 22px;
+      margin-left: 15px;
+    }
+
+    .task-title {
+      border-left: 3px solid #ccc;
+    }
+
     .task-title>input {
-      height: 48px;
+      min-height: 22px;
       outline: none;
-      border: none;
       display: block;
-      font-size: 23px;
+      font-size: 1.125rem;
       max-width: 420px;
       width: 80%;
-      border-radius: 4px;
-      margin-left: 5px;
+      border-radius: 3px;
+      margin-left: 3px;
+      padding: 1px;
+      cursor: text;
+      word-wrap: break-word;
+      border: 1px solid transparent;
+      font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif!important;
     }
 
     .task-title>input:hover {
-      border: 1px solid #ccc;
+      border-color: #d0d3d6;
+    }
+
+    .task-title>input:focus {
+      border-color: #3295ff;
     }
 
 

@@ -9,17 +9,12 @@ class ListsIndex extends React.Component {
     super(props);
     this.state = {
       modalOpen: false,
-      form: { title: "" }
+      form: { title: "" },
+      errors: ""
     };
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors.length === 0) {
-      this.closeModal();
-    }
   }
 
   componentDidMount() {
@@ -35,9 +30,14 @@ class ListsIndex extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.errors = "";
+    this.state.errors = "";
     const list = this.state.form;
-    this.props.createList({ list });
+    if (list.title === "") {
+      this.state.errors = "List name cannot be blank";
+    } else {
+      this.closeModal();
+      this.props.createList({ list });
+    }
   }
 
   updateField() {
@@ -49,7 +49,6 @@ class ListsIndex extends React.Component {
   render () {
     let { lists } = this.props;
     let { title } = this.state.form;
-    let { errors } = this.props;
 
     return (
       <div>
@@ -94,7 +93,7 @@ class ListsIndex extends React.Component {
               <input type="submit" value="Add"></input>
               <button onClick={this.closeModal}>Cancel</button>
             </div>
-            <p>{errors}</p>
+            <p>{this.state.errors}</p>
 
           </form>
         </div>

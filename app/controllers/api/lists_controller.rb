@@ -31,9 +31,8 @@ class Api::ListsController < ApplicationController
 
   def update
     find_list
-    debugger
     if @list && @list.user == current_user
-      if @list.save
+      if @list.update(list_params)
         render "api/lists/show"
       else
         render json: @list.errors.full_messages, status: 422
@@ -46,7 +45,7 @@ class Api::ListsController < ApplicationController
   def destroy
     @list = List.find_by_id(params[:id])
     if @list.user == current_user
-      @list.destroy
+      @list.delete
       render json: {}
     else
       render json: ["You do not own this list"], status: 422

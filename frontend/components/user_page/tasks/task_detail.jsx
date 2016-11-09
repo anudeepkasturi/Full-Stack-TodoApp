@@ -49,35 +49,36 @@ class TaskDetail extends React.Component {
     let task = this.state;
     return (
       <div className="task">
-        <div className="task-title">
-          <input
-            type="text"
-            value={ task.title }
-            onChange={ this.update('title') }
-            onBlur={ this.updateTask }
-          />
-        </div>
-
-        <div className="task-details">
-          <div className="due_date">
-            <label htmlFor="due_date">due</label>
-              <input
-                id="due_date"
-                type="text"
-                value={ task.due_date }
-                onChange={ this.update('due_date') }
-                onBlur={ this.updateTask }
-              />
+        <div className="task-content">
+          <div className="task-title">
+            <input
+              type="text"
+              value={ task.title }
+              onChange={ this.update('title') }
+              onBlur={ this.updateTask }
+            />
           </div>
-          <div className="description">
-            <label htmlFor="description">description</label>
-              <input
-                id="description"
-                type="textarea"
-                value={ task.description }
-                onChange={ this.update('description') }
-                onBlur={ this.updateTask }
-              />
+
+          <div className="task-details">
+            <div className="due_date">
+              <label htmlFor="due_date">due</label>
+                <input
+                  id="due_date"
+                  type="date"
+                  value={ task.due_date }
+                  onChange={ this.update('due_date') }
+                  onBlur={ this.updateTask }
+                />
+            </div>
+            <div className="description">
+              <label htmlFor="description">description</label>
+                <textarea
+                  id="description"
+                  value={ task.description }
+                  onChange={ this.update('description') }
+                  onBlur={ this.updateTask }
+                />
+            </div>
           </div>
         </div>
       </div>
