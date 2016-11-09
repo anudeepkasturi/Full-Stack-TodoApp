@@ -102,7 +102,7 @@ class ListIndexItem extends React.Component {
 
         {/* dropdown Modal */}
         <div className="dropdown-modal-container">
-          <button onClick={ this.toggleDropdownModal }>∇</button>
+          <button onClick={ this.toggleDropdownModal }>▼</button>
 
             <Modal isOpen={ this.state.dropdownModalOpen }
               onRequestClose={ this.closeDropdownModal }
