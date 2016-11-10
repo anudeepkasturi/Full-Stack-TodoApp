@@ -11,6 +11,7 @@ import SplashPageContainer from './splash_nav/splash_page_container';
 import UserPage from './user_page/user_page';
 import ListsIndexContainer from './user_page/lists/lists_index_container';
 import TaskDetailContainer from './user_page/tasks/task_detail_container';
+import findKey from 'lodash/findKey';
 
 
 const Root = ({ store }) => {
@@ -60,6 +61,14 @@ const Root = ({ store }) => {
     />
   );
 
+  const test = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/login');
+    } else {
+      
+    }
+  };
 
   const appRoute = (
     <Route path="/" component={App}>
@@ -74,18 +83,18 @@ const Root = ({ store }) => {
 
       <Route path="/home/:title"
         component={ UserPage }
-        onEnter={ handleLogin }>
+        onEnter={ test }>
 
         <Route path=":id"
           component={ TaskDetailContainer }
-          onEnter={ handleLogin }>
+          onEnter={ test }>
         </Route>
       </Route>
 
       <Route path="/search"
         component={ UserPage }
         onEnter={ handleLogin }>
-        
+
         <Route path=":id"
           component={ TaskDetailContainer }
           onEnter={ handleLogin }>

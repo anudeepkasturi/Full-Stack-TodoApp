@@ -19,18 +19,16 @@ class SearchBar extends React.Component {
 
   updateField() {
     return(e) => {
-      this.setState({ search: e.currentTarget.value });
+      this.setState({ search: e.currentTarget.value }, () => {
+        this.props.query(this.state);
+      });
     };
-  }
-
-  componentDidUpdate() {
-    this.props.query(this.state);
   }
 
   render () {
     return (
       <div className="search-bar">
-        <label>Search</label>
+        <label>Search Tasks</label>
         <input
           type='text'
           onFocus={ this.redirectToSearch }

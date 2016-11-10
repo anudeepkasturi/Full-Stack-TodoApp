@@ -29,9 +29,13 @@ class Api::TasksController < ApplicationController
   def index
     if current_user
       @tasks = current_user.tasks
-      if params[:listId].to_i != 0
-        @tasks = @tasks.joins(:tasked_lists)
-        .where(tasked_lists: {list_id: params[:listId]})
+      if params[:search]
+        @tasks = @tasks.where("upper(title) LIKE :search",{search: "%#{params[:search].upcase}%"})
+      else
+        if params[:listId].to_i != 0
+          @tasks = @tasks.joins(:tasked_lists)
+          .where(tasked_lists: {list_id: params[:listId]})
+        end
       end
       render "api/tasks/index"
     end
@@ -57,18 +61,6 @@ class Api::TasksController < ApplicationController
       render json: {}
     else
       render json: ["You do not own this task"], status: 422
-    end
-  end
-
-  #same as index
-  def search
-    if current_user
-      @tasks = current_user.tasks
-      if params[:listId].to_i != 0
-        @tasks = @tasks.joins(:tasked_lists)
-        .where(tasked_lists: {list_id: params[:listId]})
-      end
-      render "api/tasks/index"
     end
   end
 

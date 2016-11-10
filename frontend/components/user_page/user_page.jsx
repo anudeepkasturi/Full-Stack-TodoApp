@@ -3,6 +3,7 @@ import React from 'react';
 import NavigationBarContainer from './nav_bar/nav_bar_container';
 import Sidebar from './sidebar/sidebar';
 import ListContainer from './lists/list_container';
+import ListSummaryContainer from './lists/list_summary_container';
 import { withRouter } from 'react-router';
 
 class UserPage extends React.Component {
@@ -20,6 +21,7 @@ class UserPage extends React.Component {
             <h2>{ title }</h2>
             <div className="main-components">
               <ListContainer />
+              <ListSummaryContainer />
               { this.props.children }
             </div>
           </div>
