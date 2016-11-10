@@ -23,11 +23,12 @@
     padding: 3px 0;
   }
 
-  ul li a {
+  ul li>a {
     width: 100%;
     height: 100%;
     padding: 3px 10px;
     text-decoration: none;
+    color: #000;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,6 +47,7 @@
     background-color: #B8D8ED;
   }
   button {
+    display: none;
     padding: 0;
     margin: 3px 5px 0 0;
     width: 15px;
@@ -55,13 +57,16 @@
     cursor: pointer;
     color: #7ab2e0;
     background-color: transparent;
-    display: none;
     outline: none;
     border-color: #7ab2e0;
     outline: none;
     border: 1px solid;
     border-radius: 3px;
     overflow: hidden;
+  }
+
+  .active {
+    display: block;
   }
 
   button:hover {
@@ -75,31 +80,39 @@
   }
 }
 
-.dropdown-modal-container {
-  position: relative;
-}
-
-.dropdown-modal {
-  position: absolute;
+.dropdown-container {
   display: inline-block;
-  width: 120px;
-  max-height: 300px;
-  background-color: #fff;
-  border: 1px solid #D1D1D1;
-  border-radius: 5px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif;
-  outline: 0;
+  position: relative;
 
-  .dropdown-content {
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    font-size: .8125rem;
+  div {
+    position: absolute;
+    display: none;
+    width: 120px;
+    max-height: 300px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif;
+    outline: 0;
 
-    a:hover {
-      background-color: #ccc;
+    a {
+      box-sizing: border-box;
+      padding: 3px 5px;
+      width: 100%;
+      text-decoration: none;
+      color: #000;
     }
+
+    >a:hover {
+      background-color: #E0EBF7;
+    }
+  }
+
+  .show {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
   }
 }
 

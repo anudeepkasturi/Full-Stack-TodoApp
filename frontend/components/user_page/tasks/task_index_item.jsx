@@ -24,4 +24,20 @@ class TaskIndexItem extends React.Component {
   }
 }
 
+$(document).click((event) => {
+  let $el = $(event.target);
+  if (!($el.attr('class') === 'edit-list-button active')) {
+    let dropdowns = $(document).find('div.dropdown-container > div');
+    dropdowns.toArray().forEach(dropdown => {
+      $(dropdown).removeClass('show');
+    });
+    let button = $('.edit-list-button.active');
+
+    button.removeClass('active');
+
+    event.stopPropagation();
+  }
+});
+
+
 export default withRouter(TaskIndexItem);

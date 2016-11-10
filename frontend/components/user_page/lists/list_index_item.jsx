@@ -15,12 +15,14 @@ class ListIndexItem extends React.Component {
       }
     };
 
+    this.dropdownId = `dropdown${this.props.id}`;
+
     this.handleClick = this.handleClick.bind(this);
     this.deleteList = this.deleteList.bind(this);
     this.editList = this.editList.bind(this);
 
-    this.closeDropdownModal = this.closeDropdownModal.bind(this);
-    this.toggleDropdownModal = this.toggleDropdownModal.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
     this.openEditListModal = this.openEditListModal.bind(this);
     this.closeEditListModal = this.closeEditListModal.bind(this);
   }
@@ -55,7 +57,7 @@ class ListIndexItem extends React.Component {
   }
 
   deleteList() {
-    this.closeDropdownModal();
+    this.closeDropdown();
     this.props.destroyList(this.props.id);
   }
 
@@ -68,12 +70,11 @@ class ListIndexItem extends React.Component {
     }
   }
 
-  closeDropdownModal() {
-    this.setState({ dropdownModalOpen: false, form: { title: "" }});
+  closeDropdown() {
   }
 
-  toggleDropdownModal() {
-    this.setState({ dropdownModalOpen: !this.state.dropdownModalOpen });
+  toggleDropdown() {
+    $(`#${this.dropdownId}`).toggleClass('show');
   }
 
 
@@ -81,39 +82,20 @@ class ListIndexItem extends React.Component {
     let { title, id } = this.props;
     let path = `/home/${title}`;
 
-    this.dropdownId = `myDropdown${id}`;
-
-    let overlayStyle = {
-      overlay : {
-        top               : 0,
-        left              : 0,
-        right             : 0,
-        bottom            : 0,
-        backgroundColor   : 0
-      },
-      content : {
-        position          : 'absolute'
-      }
-    };
 
     return (
       <li className="list-index-item">
         <Link to={path} onClick={this.handleClick}>{ title }</Link>
 
-        {/* dropdown Modal */}
-        <div className="dropdown-modal-container">
-          <button onClick={ this.toggleDropdownModal }>▼</button>
-
-            <Modal isOpen={ this.state.dropdownModalOpen }
-              onRequestClose={ this.closeDropdownModal }
-              className="dropdown-modal"
-              style={overlayStyle}
-              >
-              <div className="dropdown-content">
-                <a onClick={ this.openEditListModal }>Edit</a>
-                <a onClick={ this.deleteList }>Delete</a>
-            </div>
-            </Modal>
+        <div className="dropdown-container">
+          <button
+            className="edit-list-button"
+            onClick={ this.toggleDropdown }
+          >▼</button>
+          <div id={this.dropdownId}>
+              <a onClick={ this.openEditListModal }>Edit</a>
+              <a onClick={ this.deleteList }>Delete</a>
+          </div>
         </div>
 
         {/* edit List Modal */}
@@ -146,5 +128,12 @@ class ListIndexItem extends React.Component {
     );
   }
 }
+
+$(document).click((event) => {
+  let $el = $(event.target)
+  if ($el.attr('class') === 'edit-list-button') {
+    $el.addClass('active');
+  }
+});
 
 export default ListIndexItem;

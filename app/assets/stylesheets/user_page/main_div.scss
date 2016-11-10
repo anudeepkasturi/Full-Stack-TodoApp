@@ -33,6 +33,7 @@
 
   .list {
     margin: 0 1px;
+    padding: 3px 15px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -40,6 +41,7 @@
     height: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+
 
     .new-task {
       width: 100%;
@@ -51,7 +53,7 @@
 
       .new-task-title {
         display: flex;
-        margin: 5px 10px;
+        margin: 5px 0;
         width: fill;
         box-sizing: border-box;
 
@@ -66,22 +68,23 @@
           white-space: nowrap;
         }
       }
+    }
 
-      .tasks-index {
-        padding: 3px 10px;
+    .tasks-index {
+      padding: 3px 0;
 
-        li {
-          padding: 4px 0;
-        }
+      .task-index-item {
+        padding: 4px 0;
+      }
 
-        li a {
-          text-decoration: none;
-          color: #000;
-          font-weight: bold;
-        }
+      .task-index-item a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
       }
     }
   }
+
 
   .task {
     margin: 0 1px;

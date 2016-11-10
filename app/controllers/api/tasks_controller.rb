@@ -68,7 +68,8 @@ class Api::TasksController < ApplicationController
       :user_id,
       :description,
       :due_date,
-      :list_id
+      :list_id,
+      :completed
     )
   end
 end

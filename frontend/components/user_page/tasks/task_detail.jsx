@@ -9,19 +9,23 @@ class TaskDetail extends React.Component {
       description: "",
       due_date: "",
       id: null,
-      user_id: null
+      user_id: null,
+      completed: false
     };
     this.updateTask = this.updateTask.bind(this);
+    this.taskStatus = this.taskStatus.bind(this);
   }
 
   setDefaultState(props = this.props) {
     let { task } = props;
+    console.log(task);
     this.setState({
       title: task.title,
       description: task.description || "",
       due_date: task.due_date || "",
       id: task.id,
-      user_id: props.user_id
+      user_id: props.user_id,
+      completed: task.completed || false
     });
   }
 
@@ -29,8 +33,16 @@ class TaskDetail extends React.Component {
     this.setDefaultState(nextProps);
   }
 
+  taskStatus() {
+    let completed = this.state.completed;
+    completed = !completed;
+    this.setState({ completed });
+    this.updateTask();
+  }
+
   updateTask() {
     if (this.state.title !== '') {
+      console.log(this.state);
       this.props.updateTask({ task: this.state });
     } else {
       this.setDefaultState();
@@ -70,6 +82,17 @@ class TaskDetail extends React.Component {
                   onBlur={ this.updateTask }
                 />
             </div>
+
+            <div className="task-status">
+              <label htmlFor="completed">status</label>
+                <input
+                  id="completed"
+                  type="button"
+                  value={ task.completed ? "Incomplete" : "Complete" }
+                  onClick={ this.taskStatus }
+                />
+            </div>
+
             <div className="description">
               <label htmlFor="description">description</label>
                 <textarea
