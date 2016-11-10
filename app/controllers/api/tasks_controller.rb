@@ -60,6 +60,18 @@ class Api::TasksController < ApplicationController
     end
   end
 
+  #same as index
+  def search
+    if current_user
+      @tasks = current_user.tasks
+      if params[:listId].to_i != 0
+        @tasks = @tasks.joins(:tasked_lists)
+        .where(tasked_lists: {list_id: params[:listId]})
+      end
+      render "api/tasks/index"
+    end
+  end
+
   private
   def task_params
     params.require(:task).permit(

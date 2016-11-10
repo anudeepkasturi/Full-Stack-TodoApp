@@ -7,8 +7,11 @@ import { fetchTasks } from '../actions/task_actions';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import {HomeLink, SplashNav} from './splash_nav/splash_nav';
+import SplashPageContainer from './splash_nav/splash_page_container';
 import UserPage from './user_page/user_page';
 import ListsIndexContainer from './user_page/lists/lists_index_container';
+import TaskDetailContainer from './user_page/tasks/task_detail_container';
+
 
 const Root = ({ store }) => {
 
@@ -60,7 +63,7 @@ const Root = ({ store }) => {
 
   const appRoute = (
     <Route path="/" component={App}>
-      <IndexRoute component={SplashNav}/>
+      <IndexRoute component={ SplashPageContainer } />
       {loginRoute}
       {signupRoute}
 
@@ -72,11 +75,21 @@ const Root = ({ store }) => {
       <Route path="/home/:title"
         component={ UserPage }
         onEnter={ handleLogin }>
+
+        <Route path=":id"
+          component={ TaskDetailContainer }
+          onEnter={ handleLogin }>
+        </Route>
       </Route>
 
-      <Route path="home/:title/:id"
+      <Route path="/search"
         component={ UserPage }
         onEnter={ handleLogin }>
+        
+        <Route path=":id"
+          component={ TaskDetailContainer }
+          onEnter={ handleLogin }>
+        </Route>
       </Route>
 
     </Route>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
+import SearchBarContainer from './search_bar_container';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Greeting extends React.Component {
     return (
       <hgroup className="header-group">
         <h2>Hello, {currentUser.username}!</h2>
+        <SearchBarContainer />
         <Link to="/" onClick={this.handleLogout}>Log Out</Link>
       </hgroup>
     );

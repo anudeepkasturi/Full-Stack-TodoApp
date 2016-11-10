@@ -18,14 +18,13 @@ class TaskDetail extends React.Component {
 
   setDefaultState(props = this.props) {
     let { task } = props;
-    console.log(task);
     this.setState({
       title: task.title,
       description: task.description || "",
       due_date: task.due_date || "",
       id: task.id,
       user_id: props.user_id,
-      completed: task.completed || false
+      completed: task.completed
     });
   }
 
@@ -34,15 +33,16 @@ class TaskDetail extends React.Component {
   }
 
   taskStatus() {
-    let completed = this.state.completed;
-    completed = !completed;
-    this.setState({ completed });
+    let complete = this.state.completed;
+    complete = !complete;
+    console.log(complete);
+    this.setState({ completed: complete }, console.log(this.state));
+    console.log(this.state);
     this.updateTask();
   }
 
   updateTask() {
     if (this.state.title !== '') {
-      console.log(this.state);
       this.props.updateTask({ task: this.state });
     } else {
       this.setDefaultState();
@@ -84,13 +84,13 @@ class TaskDetail extends React.Component {
             </div>
 
             <div className="task-status">
-              <label htmlFor="completed">status</label>
-                <input
-                  id="completed"
-                  type="button"
-                  value={ task.completed ? "Incomplete" : "Complete" }
-                  onClick={ this.taskStatus }
-                />
+              <label htmlFor="completed">completed</label>
+              <input
+                id="completed"
+                type="checkbox"
+                value={ this.props.task.completed }
+                onClick={ this.taskStatus }
+              />
             </div>
 
             <div className="description">

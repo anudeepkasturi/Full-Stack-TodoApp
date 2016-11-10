@@ -130,7 +130,7 @@ class ListIndexItem extends React.Component {
 }
 
 $(document).click((event) => {
-  let $el = $(event.target)
+  let $el = $(event.target);
   if ($el.attr('class') === 'edit-list-button') {
     $el.addClass('active');
   }

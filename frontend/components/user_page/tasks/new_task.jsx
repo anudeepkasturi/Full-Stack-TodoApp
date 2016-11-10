@@ -6,7 +6,7 @@ class NewTask extends React.Component {
     super(props);
 
     this.state = {
-      title: "",
+      title: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -41,7 +41,7 @@ class NewTask extends React.Component {
               value={ title }
             />
           </div>
-          <input type="submit" value="Add Task" />
+          <input type="submit" value="Add Task" disabled={ title === ''}/>
         </form>
       </div>
     );

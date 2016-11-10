@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskIndexItemContainer from './task_index_item_container';
+import { withRouter } from 'react-router';
 
 class TasksIndex extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class TasksIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTasks(this.props.list);
+    this.props.fetchTasks();
   }
 
   render () {

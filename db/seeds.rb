@@ -39,6 +39,16 @@ task3 = Task.create!({
   due_date: Date.new(2017, 1, 2),
   user_id: 2
 })
+task4 = Task.create!({
+  #id: 3
+  title: "Host on Heroku",
+  description: "Set up Heroku account and push to it",
+  due_date: Date.new(2016, 11, 2),
+  user_id: 2,
+  completed: true
+})
+
+
 
 list1 = List.create!({
   title: "Personal",
