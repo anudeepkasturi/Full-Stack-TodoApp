@@ -8,10 +8,6 @@ class TasksIndex extends React.Component {
 
   }
 
-  componentDidMount() {
-    this.props.fetchTasks();
-  }
-
   render () {
     let { tasks } = this.props;
     return (

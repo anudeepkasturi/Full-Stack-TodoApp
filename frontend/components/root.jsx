@@ -2,8 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { clearErrors } from '../actions/error_actions';
-import { fetchLists } from '../actions/list_actions';
-import { fetchTasks } from '../actions/task_actions';
+import { fetchLists, fetchList } from '../actions/list_actions';
+import { fetchTasks, fetchTask } from '../actions/task_actions';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import {HomeLink, SplashNav} from './splash_nav/splash_nav';
@@ -40,8 +40,8 @@ const Root = ({ store }) => {
     if (!currentUser) {
       replace('/login');
     } else {
-      store.dispatch(fetchTasks());
       store.dispatch(fetchLists());
+      store.dispatch(fetchTasks());
     }
   };
 
@@ -61,13 +61,22 @@ const Root = ({ store }) => {
     />
   );
 
-  const test = (nextState, replace) => {
+  const renderListnTasks = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/login');
     } else {
-      
+      if(nextState.params.listId === 'inbox') {
+        store.dispatch(fetchTasks());
+      } else {
+        store.dispatch(fetchList(nextState.params.listId));
+        store.dispatch(fetchTasks(nextState.params.listId));
+      }
     }
+  };
+
+  const renderTask = (nextState, replace) => {
+    store.dispatch(fetchTask(nextState.params.id));
   };
 
   const appRoute = (
@@ -76,18 +85,17 @@ const Root = ({ store }) => {
       {loginRoute}
       {signupRoute}
 
-      <Route path="/home"
-        component={ UserPage }
-        onEnter={ handleIndex }>
+      <Route path="/home" component={ UserPage } >
+        <IndexRoute onEnter={ handleIndex } />
       </Route>
 
-      <Route path="/home/:title"
+      <Route path="/home/:listId"
         component={ UserPage }
-        onEnter={ test }>
+        onEnter={ renderListnTasks }>
 
         <Route path=":id"
           component={ TaskDetailContainer }
-          onEnter={ test }>
+          onEnter={ renderTask }>
         </Route>
       </Route>
 

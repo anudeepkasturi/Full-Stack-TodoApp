@@ -14,7 +14,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    @list = List.inlcudes(:tasks).find_by_id(params[:id])
+    @list = List.includes(:tasks).find_by_id(params[:id])
     if @list
       render "api/lists/show"
     else

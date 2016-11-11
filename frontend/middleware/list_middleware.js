@@ -1,6 +1,7 @@
 import {
   FETCH_LISTS,
   FETCH_LIST,
+  FETCH_LIST_BY_TITLE,
   DESTROY_LIST,
   CREATE_LIST,
   UPDATE_LIST,
@@ -13,6 +14,7 @@ import { receiveErrors } from '../actions/error_actions';
 import {
   fetchLists,
   fetchList,
+  fetchListByTitle,
   destroyList,
   createList,
   updateList

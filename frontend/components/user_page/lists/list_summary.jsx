@@ -1,24 +1,47 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class ListSummary extends React.Component {
-  render () {
+  constructor(props) {
+    super(props);
+  }
 
-    let list = this.props.lists[this.props.list];
-    // console.log(list);
+  componentWillReceiveProps(nextProps) {
+    let { summary } = nextProps;
+    this.num_tasks = summary.num_tasks;
+    this.num_complete_tasks = summary.num_complete_tasks;
+    this.num_incomplete_tasks = summary.num_incomplete_tasks;
+  }
+
+  render () {
+    let runder;
+    if (this.props.params.id) {
+      runder = (<div></div>);
+    } else {
+      runder = (
+        <div>
+          <div className="summary-tasks">
+            <p>{ this.num_tasks }</p>
+            <label>tasks</label>
+          </div>
+          <div className="summary-incomplete">
+            <p>{ this.num_incomplete_tasks }</p>
+            <label>incomplete</label>
+          </div>
+          <div className="summary-complete">
+            <p>{ this.num_complete_tasks }</p>
+            <label>completed</label>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="list-summary">
-        <div className="summary-tasks">
-          {/*<p>{ list.num_tasks }</p>*/}
-        </div>
-        <div className="summary-complete">
-          {/*<p>{ list.num_completed_tasks }</p>*/}
-        </div>
-        <div className="summary-incomplete">
-          {/*<p>{ list.num_incomplete_tasks }</p>*/}
-        </div>
+        {runder}
       </div>
     );
   }
 }
 
-export default ListSummary;
+export default withRouter(ListSummary);

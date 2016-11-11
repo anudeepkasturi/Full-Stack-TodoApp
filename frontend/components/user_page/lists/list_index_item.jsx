@@ -21,7 +21,6 @@ class ListIndexItem extends React.Component {
     this.deleteList = this.deleteList.bind(this);
     this.editList = this.editList.bind(this);
 
-    this.closeDropdown = this.closeDropdown.bind(this);
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.openEditListModal = this.openEditListModal.bind(this);
     this.closeEditListModal = this.closeEditListModal.bind(this);
@@ -52,7 +51,6 @@ class ListIndexItem extends React.Component {
   }
 
   handleClick() {
-    this.props.fetchTasks(this.props.id);
     this.props.selectList(this.props.id);
   }
 
@@ -70,18 +68,13 @@ class ListIndexItem extends React.Component {
     }
   }
 
-  closeDropdown() {
-  }
-
   toggleDropdown() {
     $(`#${this.dropdownId}`).toggleClass('show');
   }
 
-
   render () {
     let { title, id } = this.props;
-    let path = `/home/${title}`;
-
+    let path = `/home/${id}`;
 
     return (
       <li className="list-index-item">

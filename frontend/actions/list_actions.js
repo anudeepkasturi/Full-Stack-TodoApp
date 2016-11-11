@@ -8,6 +8,7 @@ export const RECEIVE_ALL_LISTS = "RECEIVE_ALL_LISTS";
 export const RECEIVE_LIST = "RECEIVE_LIST";
 export const SELECT_LIST = "SELECT_LIST";
 
+
 //middleware actions
 export const fetchLists = () => ({
   type: FETCH_LISTS

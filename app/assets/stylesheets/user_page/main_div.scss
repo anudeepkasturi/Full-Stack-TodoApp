@@ -85,6 +85,45 @@
     }
   }
 
+  .list-summary {
+    display: flex;
+    height: 55px;
+
+    div, p, label {
+      display: flex;
+    }
+    >div>div {
+      background-color: #D8E9F5;
+      margin: 1px;
+      vertical-align: top;
+      display: inline-block;
+      padding: 9px 13px;
+      margin-right: 5px;
+      line-height: 100%;
+      border-radius: 5px;
+
+      p {
+        font-size: 1.1875rem;
+        font-weight: bold;
+        line-height: 100%;
+        padding-top: 1px;
+      }
+      label {
+        font-size: .75rem;
+        padding-top: 2px;
+      }
+    }
+    .summary-tasks>p {
+      color: #0060bf;
+    }
+    .summary-incomplete>p {
+      color: #d74a00;
+    }
+    .summary-complete {
+      color: rgba(0,0,0,0.4);
+    }
+  }
+
 
   .task {
     margin: 0 1px;

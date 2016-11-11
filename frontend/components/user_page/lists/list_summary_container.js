@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import ListSummary from './list_summary';
 
 const mapStateToProps = state => ({
-  list: state.list,
-  lists: state.lists
+  summary: state.tasks.index_summary
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
