@@ -8,7 +8,7 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import {HomeLink, SplashNav} from './splash_nav/splash_nav';
 import SplashPageContainer from './splash_nav/splash_page_container';
-import UserPage from './user_page/user_page';
+import UserPageContainer from './user_page/user_page_container';
 import ListsIndexContainer from './user_page/lists/lists_index_container';
 import TaskDetailContainer from './user_page/tasks/task_detail_container';
 import findKey from 'lodash/findKey';
@@ -85,12 +85,12 @@ const Root = ({ store }) => {
       {loginRoute}
       {signupRoute}
 
-      <Route path="/home" component={ UserPage } >
+      <Route path="/home" component={ UserPageContainer } >
         <IndexRoute onEnter={ handleIndex } />
       </Route>
 
       <Route path="/home/:listId"
-        component={ UserPage }
+        component={ UserPageContainer }
         onEnter={ renderListnTasks }>
 
         <Route path=":id"
@@ -100,7 +100,7 @@ const Root = ({ store }) => {
       </Route>
 
       <Route path="/search"
-        component={ UserPage }
+        component={ UserPageContainer }
         onEnter={ handleLogin }>
 
         <Route path=":id"

@@ -28,9 +28,9 @@ class SearchBar extends React.Component {
   render () {
     return (
       <div className="search-bar">
-        <label>Search Tasks</label>
         <input
           type='text'
+          placeholder="Search tasks..."
           onFocus={ this.redirectToSearch }
           onChange={ this.updateField() }
           value={ this.state.search }

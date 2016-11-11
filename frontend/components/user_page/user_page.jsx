@@ -7,18 +7,29 @@ import ListSummaryContainer from './lists/list_summary_container';
 import { withRouter } from 'react-router';
 
 class UserPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.title = "";
+  }
 
+
+  componentDidUpdate() {
+    let { listId } = this.props.params;
+    if (listId) {
+      this.title = this.props.lists[listId].title || "";
+    } else {
+      this.title = "Inbox";
+    }
+  }
 
   render () {
-
-    let title = this.props.params.title || "Inbox";
     return (
       <div className="user-page">
         <NavigationBarContainer />
         <div className="page">
           <Sidebar />
           <div className="main-div">
-            <h2>{ title }</h2>
+            <h2>{ this.title || "Inbox" }</h2>
             <div className="main-components">
               <ListContainer />
               <ListSummaryContainer />

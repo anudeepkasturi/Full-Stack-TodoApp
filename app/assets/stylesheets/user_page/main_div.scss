@@ -1,3 +1,5 @@
+@import 'globals';
+
 .page {
   display: flex;
   height: 100%;
@@ -49,23 +51,43 @@
 
       form {
         width: 100%;
-      }
-
-      .new-task-title {
         display: flex;
-        margin: 5px 0;
-        width: fill;
-        box-sizing: border-box;
+        flex-direction: column;
+        align-items: flex-end;
 
-        input {
+
+        .new-task-title {
+          display: flex;
+          margin: 5px 0;
+          width: fill;
+          box-sizing: border-box;
           width: 100%;
-          outline: none;
+
+          input {
+            width: 100%;
+            outline: none;
+            border-radius: 3px;
+            border: 1px solid #d0d3d6;
+            line-height: 1.25rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        >input {
+          color: $theme-font-color;
+          background-color: #009dff;
+          border: none;
           border-radius: 3px;
-          border: 1px solid #d0d3d6;
-          line-height: 1.25rem;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          cursor: pointer;
+          font-size: 15px;
+          font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        >input:disabled {
+          background-color: #d0d3d6;
+        }
+        #new-task-submit.hide {
+          display: none;
         }
       }
     }
@@ -182,6 +204,15 @@
         padding: 5px;
         display: flex;
         justify-content: space-between;
+      }
+
+      .task-status {
+        .complete {
+          color: #0060bf;
+        }
+        .incomplete {
+          color: #d74a00;
+        }
       }
     }
   }

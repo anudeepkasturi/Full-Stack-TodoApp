@@ -9,6 +9,8 @@ class NewTask extends React.Component {
       title: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.showSubmit = this.showSubmit.bind(this);
+    this.hideSubmit = this.hideSubmit.bind(this);
   }
 
   updateField() {
@@ -19,13 +21,22 @@ class NewTask extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props.list);
     let task = {
       title: this.state.title,
       list_id: this.props.list
     };
     this.props.createTask({ task });
     this.setState({ title: "" });
+  }
+
+  showSubmit() {
+    console.log('focus');
+    $('#new-task-submit').removeClass('hide');
+  }
+
+  hideSubmit() {
+    console.log('blur');
+    $('#new-task-submit').addClass('hide');
   }
 
   render () {
@@ -39,9 +50,16 @@ class NewTask extends React.Component {
               placeholder="Add a task..."
               onChange={ this.updateField() }
               value={ title }
+              onFocus={ this.showSubmit }
+              onBlur={ this.hideSubmit }
             />
           </div>
-          <input type="submit" value="Add Task" disabled={ title === ''}/>
+          <input
+            id="new-task-submit"
+            type="submit"
+            value="Add Task"
+            className="hide"
+            disabled={ title === ''}/>
         </form>
       </div>
     );

@@ -24,7 +24,7 @@ class Api::ListsController < ApplicationController
 
   def index
     if current_user
-      @lists = current_user.lists
+      @lists = current_user.lists.includes(:tasks)
       render "api/lists/index"
     end
   end

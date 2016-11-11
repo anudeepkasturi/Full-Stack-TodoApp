@@ -6,8 +6,10 @@
 
 .nav-bar {
   display: flex;
+  min-height: 40px;
   width: 100%;
   background-color: #0056B7;
+  align-items: center;
   justify-content: center;
   color: $theme-font-color;
 
@@ -18,11 +20,28 @@
     align-items: center;
     width: 90%;
     height: 100%;
+    min-height: 40px;
+    vertical-align: baseline;
+
+    .search-bar {
+      width: 33%;
+      
+      >input {
+        width: 100%;
+        outline: none;
+        border-radius: 3px;
+        border: 1px solid #d0d3d6;
+        line-height: 1.25rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
 
     a {
       color: $theme-font-color;
       text-decoration: none;
-      padding: 5px;
+      padding: 10px;
     }
     a:hover {
       background-color: $theme-hover-color;

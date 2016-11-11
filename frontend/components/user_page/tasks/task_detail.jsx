@@ -82,10 +82,13 @@ class TaskDetail extends React.Component {
 
             <div className="task-status">
               <label htmlFor="completed">status</label>
+              <p
+                className={ task.completed ? "complete" : "incomplete" }
+                >{ task.completed ? "Complete" : "Incomplete" }</p>
               <input
                 id="completed"
                 type="button"
-                value={ this.props.task.completed ? "mark as incomplete" :  "mark as completed"}
+                value={ task.completed ? "mark as incomplete" :  "mark as completed"}
                 onClick={ this.updateStatus }
               />
             </div>
