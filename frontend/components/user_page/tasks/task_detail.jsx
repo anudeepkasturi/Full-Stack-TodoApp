@@ -88,6 +88,7 @@ class TaskDetail extends React.Component {
               <input
                 id="completed"
                 type="button"
+                className={ task.completed ? "incomplete" : "complete" }
                 value={ task.completed ? "mark as incomplete" :  "mark as completed"}
                 onClick={ this.updateStatus }
               />
@@ -96,7 +97,7 @@ class TaskDetail extends React.Component {
             <div className="description">
               <label htmlFor="description">description</label>
               <textarea
-                id="description"
+                className="description-text"
                 value={ task.description }
                 onChange={ this.update('description') }
                 onBlur={ this.updateTask }

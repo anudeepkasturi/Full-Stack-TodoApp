@@ -197,14 +197,21 @@
     }
 
 
+
+
     .task-details {
       display: flex;
       flex-direction: column;
       padding-left: 30px;
+
       >div {
-        padding: 5px;
+        padding: 10px;
         display: flex;
         justify-content: space-between;
+      }
+
+      label {
+        line-height: 25px;
       }
 
       .due-date, .task-status {
@@ -217,7 +224,6 @@
         outline: none;
         display: block;
         font-size: .8125rem;
-        max-width: 240px;
         border-radius: 3px;
         margin-left: 3px;
         padding: 1px;
@@ -227,22 +233,42 @@
         font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif!important;
       }
 
-      .description {
-        flex-direction: column;
-        justify-content: flex-start;
-        textarea {
-          box-sizing: border-box;
-          width: 100%;
-          margin: 0;
-        }
-      }
-
       .task-status {
+        p {
+          line-height: 23px;
+          font-weight: 500;
+        }
+
+        input {
+          font-size: .8125rem;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          color: $theme-font-color;
+          background-color: #e6e6e6;
+        }
+
+        input:focus {
+          outline: none;
+        }
+
         .complete {
           color: #0060bf;
         }
         .incomplete {
           color: #d74a00;
+        }
+      }
+
+      .description {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+
+        .description-text {
+          box-sizing: border-box;
+          width: 100%;
+          margin: 10px 0;
+          height: 100px;
         }
       }
     }
