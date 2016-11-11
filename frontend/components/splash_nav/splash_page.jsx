@@ -25,8 +25,10 @@ class SplashPage extends React.Component {
               onClick={ this.guestLogin }>
             </input>
           </div>
-          <div className="image">
-            <img src='assets/splash_image.png'></img>
+          <div className="image-container">
+            <div className="image">
+              <img src='assets/splash_image.png'></img>
+            </div>
           </div>
         </div>
       </div>
