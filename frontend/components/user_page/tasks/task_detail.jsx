@@ -69,7 +69,7 @@ class TaskDetail extends React.Component {
           </div>
 
           <div className="task-details">
-            <div className="due_date">
+            <div className="due-date">
               <label htmlFor="due_date">due</label>
                 <input
                   id="due_date"
@@ -95,12 +95,12 @@ class TaskDetail extends React.Component {
 
             <div className="description">
               <label htmlFor="description">description</label>
-                <textarea
-                  id="description"
-                  value={ task.description }
-                  onChange={ this.update('description') }
-                  onBlur={ this.updateTask }
-                />
+              <textarea
+                id="description"
+                value={ task.description }
+                onChange={ this.update('description') }
+                onBlur={ this.updateTask }
+              />
             </div>
           </div>
         </div>

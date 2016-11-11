@@ -200,10 +200,41 @@
     .task-details {
       display: flex;
       flex-direction: column;
+      padding-left: 30px;
       >div {
         padding: 5px;
         display: flex;
         justify-content: space-between;
+      }
+
+      .due-date, .task-status {
+        width: 300px;
+        justify-content: space-between;;
+      }
+
+      .due-date>input, .description>textarea {
+        min-height: 15px;
+        outline: none;
+        display: block;
+        font-size: .8125rem;
+        max-width: 240px;
+        border-radius: 3px;
+        margin-left: 3px;
+        padding: 1px;
+        cursor: text;
+        word-wrap: break-word;
+        border: 1px solid #ccc;
+        font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif!important;
+      }
+
+      .description {
+        flex-direction: column;
+        justify-content: flex-start;
+        textarea {
+          box-sizing: border-box;
+          width: 100%;
+          margin: 0;
+        }
       }
 
       .task-status {

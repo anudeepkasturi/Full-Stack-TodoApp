@@ -12,10 +12,9 @@ class UserPage extends React.Component {
     this.title = "";
   }
 
-
   componentDidUpdate() {
     let { listId } = this.props.params;
-    if (listId) {
+    if (listId && this.props.lists[listId]) {
       this.title = this.props.lists[listId].title || "";
     } else {
       this.title = "Inbox";
