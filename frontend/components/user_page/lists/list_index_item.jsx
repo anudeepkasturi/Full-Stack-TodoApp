@@ -55,7 +55,7 @@ class ListIndexItem extends React.Component {
   }
 
   deleteList() {
-    this.closeDropdown();
+    this.toggleDropdown();
     this.props.destroyList(this.props.id);
   }
 
@@ -69,8 +69,14 @@ class ListIndexItem extends React.Component {
   }
 
   toggleDropdown() {
-
+    let dropdowns = $('div.dropdown-container > div');
+    dropdowns.toArray().forEach(dropdown => {
+      if (dropdown.id !== this.dropdownId){
+        $(dropdown).removeClass('show');
+      }
+    });
     $(`#${this.dropdownId}`).toggleClass('show');
+    $($(`#${this.dropdownId}`).siblings()[0]).toggleClass('active');
   }
 
   render () {
@@ -122,24 +128,21 @@ class ListIndexItem extends React.Component {
     );
   }
 }
-
-$(document).click((event) => {
-  let $el = $(event.target);
-  if ($el.attr('class') === 'edit-list-button') {
-    $el.addClass('active');
-  }
-});
-
+//deactivate all buttons and dropdowns when not clicked on a button
 $(document).click((event) => {
   let $el = $(event.target);
   if (!($el.attr('class') === 'edit-list-button active')) {
-    let dropdowns = $(document).find('div.dropdown-container > div');
+
+    let activeButtons = $('.edit-list-button.active');
+    let dropdowns = $('div.dropdown-container > div');
+
     dropdowns.toArray().forEach(dropdown => {
       $(dropdown).removeClass('show');
     });
-    let button = $('.edit-list-button.active');
 
-    button.removeClass('active');
+    activeButtons.toArray().forEach(button => {
+      $(button).removeClass('active');
+    });
 
     event.stopPropagation();
   }

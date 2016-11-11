@@ -85,6 +85,7 @@
   position: relative;
 
   div {
+    z-index: 11;
     position: absolute;
     display: none;
     width: 120px;
