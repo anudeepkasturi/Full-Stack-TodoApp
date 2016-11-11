@@ -1,0 +1,776 @@
+/* line 1, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 22, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 26, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+html {
+  height: 100%;
+}
+
+/* line 29, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+body, .user-page, #root, #root > div {
+  height: 100%;
+  line-height: 1;
+}
+
+/* line 34, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 4, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container * {
+  margin: 5px;
+  box-sizing: border-box;
+}
+/* line 9, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form {
+  transform: translate(0, 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* line 16, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form input {
+  padding: 5px;
+  display: block;
+  font-size: 23px;
+  max-width: 420px;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 48px;
+}
+/* line 27, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .error-msg {
+  color: red;
+}
+/* line 32, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .login-input {
+  font-weight: lighter;
+}
+/* line 36, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .session-form-submit, .session-form-container .session-form button {
+  color: #fff;
+  background-color: #009dff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 45, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .session-form-submit:focus, .session-form-container .session-form button:focus {
+  outline-offset: -2px;
+}
+/* line 49, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .session-form-submit:hover {
+  background-color: #004CBE;
+}
+/* line 53, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form button {
+  background-color: #d24b03;
+  padding: 5px;
+  display: block;
+  font-size: 23px;
+  max-width: 420px;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 48px;
+}
+/* line 65, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form button:hover {
+  background-color: #ca492e;
+}
+/* line 69, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form button:focus {
+  outline: none;
+  border: 1px solid #ca492e;
+}
+/* line 74, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .change-form-type {
+  max-width: 420px;
+  width: 80%;
+  text-align: center;
+}
+/* line 79, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .change-form-type h3 {
+  width: 100%;
+  position: relative;
+}
+/* line 84, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .change-form-type h3 span {
+  display: inline-block;
+  padding: 0 10px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.3);
+}
+/* line 91, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/session_form.scss */
+.session-form-container .session-form .change-form-type h3:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #ccc;
+}
+/* line 2, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page {
+  height: 100%;
+}
+/* line 5, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-nav-container {
+  display: flex;
+  width: 100%;
+  background-color: #0056C2;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+/* line 13, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-nav-container .splash-nav {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
+  height: 100%;
+  min-height: 70px;
+}
+/* line 22, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-nav-container .splash-nav .home-link, .splash-page .splash-nav-container .splash-nav .session-links {
+  padding: 0;
+  margin: 0;
+}
+/* line 28, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-nav-container .splash-nav .home-link a, .splash-page .splash-nav-container .splash-nav .session-links a {
+  display: inline-block;
+  align-items: center;
+  margin: 0;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 39, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0056C2;
+}
+/* line 47, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 52px 39px 53px;
+}
+/* line 54, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .header > h1 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.1;
+  margin: 18px 0 31px 0;
+  font-size: 44px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+/* line 64, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .header > input {
+  cursor: pointer;
+  color: #fff;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #d24b03;
+  padding: 5px;
+  display: block;
+  font-size: 23px;
+  max-width: 420px;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid #0056C2;
+  min-height: 48px;
+}
+/* line 79, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .header > input:hover {
+  background-color: #ca492e;
+}
+/* line 83, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .header > input:focus {
+  outline: none;
+  border: 1px solid #ca492e;
+}
+/* line 88, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* line 92, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .image-container .image {
+  width: 200px;
+}
+/* line 94, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/splash_nav.scss */
+.splash-page .splash-main .image-container .image img {
+  width: 100%;
+  height: auto;
+}
+/* line 3, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.page {
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #D5E8F4;
+}
+
+/* line 10, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 9px;
+  margin-right: 9px;
+  height: 100%;
+  width: 100%;
+  background-color: #E0EBF7;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+/* line 22, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div > h2 {
+  min-height: 22px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 11px 6px 0 12px;
+  font-size: 1.125rem;
+}
+/* line 30, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .main-components {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+/* line 36, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list {
+  margin: 0 1px;
+  padding: 3px 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+/* line 48, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .new-task {
+  width: 100%;
+  display: flex;
+}
+/* line 52, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .new-task form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+/* line 59, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .new-task form .new-task-title {
+  display: flex;
+  margin: 5px 0;
+  width: fill;
+  box-sizing: border-box;
+  width: 100%;
+}
+/* line 66, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .new-task form .new-task-title input {
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #d0d3d6;
+  line-height: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 77, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .new-task form > input {
+  color: #fff;
+  background-color: #009dff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 86, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .new-task form > input:disabled {
+  background-color: #d0d3d6;
+}
+/* line 89, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .new-task form #new-task-submit.hide {
+  display: none;
+}
+/* line 95, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .tasks-index {
+  padding: 3px 0;
+}
+/* line 98, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .tasks-index .task-index-item {
+  padding: 4px 0;
+}
+/* line 102, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .tasks-index .task-index-item a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+/* line 107, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .tasks-index .completed {
+  text-decoration: line-through;
+}
+/* line 109, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list .tasks-index .completed a {
+  color: rgba(0, 0, 0, 0.4);
+}
+/* line 116, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary {
+  display: flex;
+  height: 55px;
+}
+/* line 120, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary div, .main-div .list-summary p, .main-div .list-summary label {
+  display: flex;
+}
+/* line 123, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary > div > div {
+  background-color: #D8E9F5;
+  margin: 1px;
+  vertical-align: top;
+  display: inline-block;
+  padding: 9px 13px;
+  margin-right: 5px;
+  line-height: 100%;
+  border-radius: 5px;
+}
+/* line 133, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary > div > div p {
+  font-size: 1.1875rem;
+  font-weight: bold;
+  line-height: 100%;
+  padding-top: 1px;
+}
+/* line 139, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary > div > div label {
+  font-size: .75rem;
+  padding-top: 2px;
+}
+/* line 144, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary .summary-tasks > p {
+  color: #0060bf;
+}
+/* line 147, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary .summary-incomplete > p {
+  color: #d74a00;
+}
+/* line 150, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .list-summary .summary-complete {
+  color: rgba(0, 0, 0, 0.4);
+}
+/* line 156, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task {
+  margin: 0 1px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+/* line 166, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-content {
+  margin-top: 22px;
+  margin-left: 15px;
+}
+/* line 171, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-title {
+  border-left: 3px solid #ccc;
+}
+/* line 175, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-title > input {
+  min-height: 22px;
+  outline: none;
+  display: block;
+  font-size: 1.125rem;
+  max-width: 420px;
+  width: 80%;
+  border-radius: 3px;
+  margin-left: 3px;
+  padding: 1px;
+  cursor: text;
+  word-wrap: break-word;
+  border: 1px solid transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Apple Color Emoji", clean, sans-serif !important;
+}
+/* line 191, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-title > input:hover {
+  border-color: #d0d3d6;
+}
+/* line 195, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-title > input:focus {
+  border-color: #3295ff;
+}
+/* line 200, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-details {
+  display: flex;
+  flex-direction: column;
+}
+/* line 203, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-details > div {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 210, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-details .task-status .complete {
+  color: #0060bf;
+}
+/* line 213, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/main_div.scss */
+.main-div .task .task-details .task-status .incomplete {
+  color: #d74a00;
+}
+/* line 3, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/nav_bar.scss */
+.nav-bar-container {
+  display: block;
+}
+
+/* line 7, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/nav_bar.scss */
+.nav-bar {
+  display: flex;
+  min-height: 40px;
+  width: 100%;
+  background-color: #0056B7;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+/* line 16, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/nav_bar.scss */
+.nav-bar .header-group {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  min-height: 40px;
+  vertical-align: baseline;
+}
+/* line 26, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/nav_bar.scss */
+.nav-bar .header-group .search-bar {
+  width: 33%;
+}
+/* line 29, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/nav_bar.scss */
+.nav-bar .header-group .search-bar > input {
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #d0d3d6;
+  line-height: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 41, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/nav_bar.scss */
+.nav-bar .header-group a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+/* line 46, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/nav_bar.scss */
+.nav-bar .header-group a:hover {
+  background-color: #004CBE;
+  border-radius: 4px;
+}
+/* line 1, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar {
+  width: 20%;
+  min-width: 178px;
+  max-width: 228px;
+  height: 100%;
+  display: inline-block;
+  padding: 11px;
+}
+/* line 10, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar ul li {
+  white-space: nowrap;
+  padding: 0;
+  outline: none;
+}
+/* line 16, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar ul li, .sidebar .list-header {
+  display: flex;
+  justify-content: space-between;
+  color: #0058af;
+}
+/* line 22, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar .list-header {
+  padding: 3px 0;
+}
+/* line 26, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar ul li > a {
+  width: 100%;
+  height: 100%;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 37, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar .list-header button {
+  display: block;
+  font-size: .75rem;
+  line-height: .2rem;
+  padding: 0 0 3px 0;
+  margin: 1px 5px 1px 0;
+}
+/* line 46, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar ul li:hover {
+  background-color: #B8D8ED;
+}
+/* line 49, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar button {
+  display: none;
+  padding: 0;
+  margin: 3px 5px 0 0;
+  width: 15px;
+  height: 15px;
+  font-size: .5rem;
+  line-height: .7rem;
+  cursor: pointer;
+  color: #7ab2e0;
+  background-color: transparent;
+  outline: none;
+  border-color: #7ab2e0;
+  outline: none;
+  border: 1px solid;
+  border-radius: 3px;
+  overflow: hidden;
+}
+/* line 68, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar .active {
+  display: block;
+}
+/* line 72, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar button:hover {
+  background-color: #7ab2e0;
+  border-color: transparent;
+  color: #E0EBF7;
+}
+/* line 78, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.sidebar ul .list-index-item:hover button {
+  display: block;
+}
+
+/* line 83, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.dropdown-container {
+  display: inline-block;
+  position: relative;
+}
+/* line 87, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.dropdown-container div {
+  z-index: 11;
+  position: absolute;
+  display: none;
+  width: 120px;
+  max-height: 300px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif;
+  outline: 0;
+}
+/* line 100, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.dropdown-container div a {
+  box-sizing: border-box;
+  padding: 3px 5px;
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+}
+/* line 108, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.dropdown-container div > a:hover {
+  background-color: #E0EBF7;
+}
+/* line 113, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.dropdown-container .show {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 120, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass {
+  top: 40%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  min-width: 200px;
+  max-width: 400px;
+  max-height: 300px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif;
+}
+/* line 137, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div {
+  padding: 29px 37px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  font-size: .8125rem;
+}
+/* line 144, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div .input {
+  margin: 7px 0 0 0;
+  padding: 10px 0;
+}
+/* line 149, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div .buttons {
+  display: flex;
+  margin: 10px 0;
+}
+/* line 153, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div .buttons button, .ModalClass .modal-div .buttons input {
+  align-items: flex-start;
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  background-color: #fbfbfa;
+  color: #444;
+  border: 1px solid #c7cacd;
+  text-shadow: none;
+  line-height: .875rem;
+  outline: none;
+  border-radius: 3px;
+  height: 32px;
+  position: relative;
+  font-size: .875rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px 13px;
+  min-width: 70px;
+  vertical-align: middle;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+/* line 176, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div .buttons input {
+  background-color: #2e8ceb;
+  color: #fff;
+}
+/* line 183, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div h2 {
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+}
+/* line 190, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div form .input-text {
+  cursor: text;
+  outline: none;
+  border: 1px solid #d0d3d6;
+  padding: 5px 6px;
+  height: 16px;
+  line-height: 16px;
+  line-height: 1rem;
+  border-radius: 3px;
+  width: 300px;
+  margin-top: 5px;
+}
+/* line 202, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass .modal-div form .input-text:focus {
+  border-color: #3295ff;
+}
+
+/* line 208, /Users/anudeepkasturi/Documents/App Academy/Full Stack/TodoApp/app/assets/stylesheets/user_page/side_bar.scss */
+.ModalClass:focus {
+  outline: 0;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #fff;
+  height: 100%;
+}
