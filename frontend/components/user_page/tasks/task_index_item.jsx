@@ -9,14 +9,17 @@ class TaskIndexItem extends React.Component {
   }
 
   handleClick() {
+    console.log(this.props.router);
     this.props.selectTask(this.props.id);
   }
 
   render () {
-    let { title, id } = this.props;
+    let { title, id, completed } = this.props;
     let path = `home/${ this.props.params.listId || "inbox" }/${id}`;
+    let completedClass = completed ? " completed" : "";
+    let klass = "task-index-item" + completedClass;
     return (
-      <li className="task-index-item">
+      <li className={klass}>
         <Link to={path} onClick={ this.handleClick }>{ title }</Link>
       </li>
     );

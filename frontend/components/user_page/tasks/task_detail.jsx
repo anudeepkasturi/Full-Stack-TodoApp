@@ -13,7 +13,7 @@ class TaskDetail extends React.Component {
       completed: false
     };
     this.updateTask = this.updateTask.bind(this);
-    this.taskStatus = this.taskStatus.bind(this);
+    this.updateStatus = this.updateStatus.bind(this);
   }
 
   setDefaultState(props = this.props) {
@@ -32,13 +32,10 @@ class TaskDetail extends React.Component {
     this.setDefaultState(nextProps);
   }
 
-  taskStatus() {
+  updateStatus() {
     let complete = this.state.completed;
     complete = !complete;
-    console.log(complete);
-    this.setState({ completed: complete }, console.log(this.state));
-    console.log(this.state);
-    this.updateTask();
+    this.setState({ completed: complete }, () => this.updateTask());
   }
 
   updateTask() {
@@ -84,12 +81,12 @@ class TaskDetail extends React.Component {
             </div>
 
             <div className="task-status">
-              <label htmlFor="completed">completed</label>
+              <label htmlFor="completed">status</label>
               <input
                 id="completed"
-                type="checkbox"
-                value={ this.props.task.completed }
-                onClick={ this.taskStatus }
+                type="button"
+                value={ this.props.task.completed ? "mark as incomplete" :  "mark as completed"}
+                onClick={ this.updateStatus }
               />
             </div>
 

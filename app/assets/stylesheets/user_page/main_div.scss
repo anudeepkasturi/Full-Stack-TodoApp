@@ -82,6 +82,12 @@
         color: #000;
         font-weight: bold;
       }
+      .completed {
+        text-decoration: line-through;
+        a {
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
     }
   }
 

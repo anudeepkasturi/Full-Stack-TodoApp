@@ -17,6 +17,7 @@ class TasksIndex extends React.Component {
             <TaskIndexItemContainer
               id={taskId}
               title={tasks[taskId].title}
+              completed={tasks[taskId].completed}
               description={tasks[taskId].description}
               due_date={tasks[taskId].due_date}
               key={taskId} />

@@ -14,16 +14,17 @@ class SplashPage extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     return (
       <div className="splash-page">
         <SplashNav />
         <div className="splash-main">
-          <h2>Get stuff done!</h2>
-          <input type="button"
-            value="Guest Login"
-            onClick={ this.guestLogin }>
-          </input>
+          <div className="header">
+            <h1>Organize your To Do List. Get stuff done!</h1>
+            <input type="button"
+              value="Guest Login"
+              onClick={ this.guestLogin }>
+            </input>
+          </div>
         </div>
       </div>
     );
