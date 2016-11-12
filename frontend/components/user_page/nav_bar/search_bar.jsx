@@ -13,7 +13,6 @@ class SearchBar extends React.Component {
   }
 
   redirectToSearch() {
-    console.log(this.props);
     this.props.router.push('/search');
   }
 

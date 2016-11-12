@@ -8,10 +8,9 @@ let defaultState = {};
 
 const SearchMiddleware = ({ dispatch }) => next => action => {
   const searchSuccess = data => {
-    console.log(data);
     dispatch(receiveAllTasks(data));
   };
-  const searchError = data => console.log(data.responseText);
+  const searchError = data => {};
 
   switch (action.type) {
     case FETCH_DATA:

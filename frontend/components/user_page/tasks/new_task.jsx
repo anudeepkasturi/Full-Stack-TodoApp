@@ -30,13 +30,12 @@ class NewTask extends React.Component {
   }
 
   showSubmit() {
-    console.log('focus');
     $('#new-task-submit').removeClass('hide');
   }
 
   hideSubmit() {
-    console.log('blur');
-    $('#new-task-submit').addClass('hide');
+    setTimeout(() =>
+    $('#new-task-submit').addClass('hide'), 500);
   }
 
   render () {
