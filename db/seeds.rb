@@ -52,7 +52,7 @@ task5 = Task.create!({
   #id: 5
   title: "Practice Drawing Circles",
   description: "pi = 3.1415",
-  due_date: Date.new(3141, 14, 3),
+  due_date: Date.new(3141, 12, 3),
   user_id: 2,
   completed: false
 })
@@ -100,7 +100,7 @@ task11 = Task.create!({
   #id:
   title: "Bake a cake for your niece's birthday",
   description: "She likes chocolate",
-  due_date: Date.now(2016, 11, 11),
+  due_date: Date.new(2016, 11, 11),
   user_id: 2,
   completed: true
 })
@@ -108,7 +108,7 @@ task12 = Task.create!({
   #id:
   title: "Climb Mount Everest",
   description: "Remember to bring a jacket",
-  due_date: Date.now(2016, 11, 11),
+  due_date: Date.new(2016, 11, 11),
   user_id: 2,
   completed: false
 })
