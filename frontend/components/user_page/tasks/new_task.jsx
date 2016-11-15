@@ -33,7 +33,7 @@ class NewTask extends React.Component {
     $('#new-task-submit').removeClass('hide');
   }
 
-  hideSubmit() {
+  hideSubmit(e) {
     setTimeout(() =>
     $('#new-task-submit').addClass('hide'), 500);
   }

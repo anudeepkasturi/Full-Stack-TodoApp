@@ -3,8 +3,9 @@
   min-width: 178px;
   max-width: 228px;
   height: 100%;
-  display: inline-block;
+  display: block;
   padding: 11px;
+  box-sizing: border-box;
 
 
   ul li {

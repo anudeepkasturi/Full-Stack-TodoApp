@@ -31,6 +31,8 @@
     display: flex;
     flex-direction: row;
     height: 100%;
+    box-sizing: border-box;
+
   }
 
   .list {
@@ -39,6 +41,7 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     width: 50%;
     height: 100%;
     border-top-left-radius: 6px;
@@ -47,7 +50,7 @@
 
     .new-task {
       width: 100%;
-      display: flex;
+      display: block;
 
       form {
         width: 100%;
