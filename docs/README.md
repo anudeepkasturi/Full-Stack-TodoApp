@@ -24,7 +24,7 @@ Todo App (Title TBA) is an organizational tool used for creating tasks and setti
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: ./wireframes
+[wireframes]: ./Wireframes
 [components]: ./component-hierarchy.md
 [sample-state]: ./sample-state.md
 [api-endpoints]: ./api-endpoints.md
