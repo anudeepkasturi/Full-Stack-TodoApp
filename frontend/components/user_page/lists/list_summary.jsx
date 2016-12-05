@@ -8,17 +8,17 @@ class ListSummary extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let { summary } = nextProps;
-    this.num_tasks = summary.num_tasks;
-    this.num_complete_tasks = summary.num_complete_tasks;
-    this.num_incomplete_tasks = summary.num_incomplete_tasks;
+    this.num_tasks = summary.num_tasks || 0;
+    this.num_complete_tasks = summary.num_complete_tasks || 0;
+    this.num_incomplete_tasks = summary.num_incomplete_tasks || 0;
   }
 
   render () {
-    let runder;
+    let listSummary;
     if (this.props.params.id) {
-      runder = (<div></div>);
+      listSummary = (<div></div>);
     } else {
-      runder = (
+      listSummary = (
         <div>
           <div className="summary-tasks">
             <p>{ this.num_tasks }</p>
@@ -38,7 +38,7 @@ class ListSummary extends React.Component {
 
     return (
       <div className="list-summary">
-        {runder}
+        {listSummary}
       </div>
     );
   }

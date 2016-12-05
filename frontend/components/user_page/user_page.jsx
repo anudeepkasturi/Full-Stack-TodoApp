@@ -28,7 +28,9 @@ class UserPage extends React.Component {
         <div className="page">
           <Sidebar />
           <div className="main-div">
-            <h2>{ this.title || "Inbox" }</h2>
+            <div className="title">
+              <h2>{ this.title || "Inbox" }</h2>
+            </div>
             <div className="main-components">
               <ListContainer />
               <ListSummaryContainer />

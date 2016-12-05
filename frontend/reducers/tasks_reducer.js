@@ -18,7 +18,6 @@ const TasksReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_ALL_TASKS:
       return action.tasks;
-    case UPDATE_TASK:
     case CREATE_TASK:
     case RECEIVE_TASK:
       newState[action.task.id] = action.task;

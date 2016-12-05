@@ -57,7 +57,7 @@ class TaskDetail extends React.Component {
   render () {
     let task = this.state;
     return (
-      <div className="task">
+      <div className="task animated slideInRight">
         <div className="task-content">
           <div className="task-title">
             <input

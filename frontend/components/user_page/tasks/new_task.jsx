@@ -31,11 +31,18 @@ class NewTask extends React.Component {
 
   showSubmit() {
     $('#new-task-submit').removeClass('hide');
+    $('#new-task-submit').removeClass('slideOutUp');
+    $('#new-task-submit').addClass('slideInDown');
   }
 
   hideSubmit(e) {
-    setTimeout(() =>
-    $('#new-task-submit').addClass('hide'), 500);
+    setTimeout(() => {
+      $('#new-task-submit').removeClass('slideInDown');
+      $('#new-task-submit').addClass('slideOutUp');
+      setTimeout(() => {
+        $('#new-task-submit').addClass('hide');
+      }, 200);
+    }, 200);
   }
 
   render () {
@@ -57,7 +64,7 @@ class NewTask extends React.Component {
             id="new-task-submit"
             type="submit"
             value="Add Task"
-            className="hide"
+            className="hide animated"
             disabled={ title === ''}/>
         </form>
       </div>

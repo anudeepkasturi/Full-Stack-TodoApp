@@ -1,12 +1,14 @@
+@import '../globals';
+
 .sidebar {
-  width: 20%;
+  width: 30%;
   min-width: 178px;
   max-width: 228px;
   height: 100%;
   display: block;
   padding: 11px;
+  padding-right: 22px;
   box-sizing: border-box;
-
 
   ul li {
     white-space: nowrap;
@@ -17,7 +19,7 @@
   ul li, .list-header {
     display: flex;
     justify-content: space-between;
-    color: #0058af;
+    color: $theme-color;
   }
 
   .list-header {
@@ -27,9 +29,9 @@
   ul li>a {
     width: 100%;
     height: 100%;
-    padding: 3px 10px;
+    padding: 7px 10px;
     text-decoration: none;
-    color: #000;
+    color: #7d4627;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -41,25 +43,24 @@
     line-height: .2rem;
     padding: 0 0 3px 0;
     margin: 1px 5px 1px 0;
-
   }
 
   ul li:hover {
-    background-color: #B8D8ED;
+    background-color: #c9d8c5;
   }
   button {
     display: none;
     padding: 0;
-    margin: 3px 5px 0 0;
+    margin: 8px 5px 0 0;
     width: 15px;
     height: 15px;
     font-size: .5rem;
     line-height: .7rem;
     cursor: pointer;
-    color: #7ab2e0;
+    color: $theme-color;
     background-color: transparent;
     outline: none;
-    border-color: #7ab2e0;
+    border-color: $theme-color;
     outline: none;
     border: 1px solid;
     border-radius: 3px;
@@ -71,7 +72,7 @@
   }
 
   button:hover {
-    background-color: #7ab2e0;
+    background-color: #264a47;
     border-color: transparent;
     color: #E0EBF7;
   }
@@ -83,6 +84,7 @@
 
 .dropdown-container {
   display: inline-block;
+  justify-content: center;
   position: relative;
 
   div {
@@ -133,7 +135,6 @@
   border-radius: 5px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   font-family: 'Helvetica Neue',Helvetica,Arial,'Apple Color Emoji',clean,sans-serif;
-
 
   .modal-div {
     padding: 29px 37px;

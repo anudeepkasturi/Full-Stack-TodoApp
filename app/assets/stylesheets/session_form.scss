@@ -35,7 +35,7 @@
 
     .session-form-submit, button{
       color: $theme-font-color;
-      background-color: #009dff;
+      background-color: $theme-color;
       border: none;
       cursor: pointer;
       font-size: 20px;
@@ -47,7 +47,7 @@
     }
 
     .session-form-submit:hover {
-      background-color: $theme-hover-color;
+      background-color: #264a47;
     }
 
     button {
@@ -63,7 +63,7 @@
     }
 
     button:hover {
-      background-color: $theme-accent-hover-color;
+      background-color: #c79251;
     }
 
     button:focus {

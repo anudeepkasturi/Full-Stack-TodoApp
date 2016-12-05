@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { clearErrors } from '../actions/error_actions';
 import { fetchLists, fetchList } from '../actions/list_actions';
 import { fetchTasks, fetchTask } from '../actions/task_actions';
+import { fetchData } from '../actions/search_actions';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import {HomeLink, SplashNav} from './splash_nav/splash_nav';
@@ -101,8 +102,8 @@ const Root = ({ store }) => {
 
       <Route path="/search"
         component={ UserPageContainer }
-        onEnter={ handleLogin }>
-
+        onEnter={ handleIndex }
+        onLeave={ () => store.dispatch(fetchData('')) }>
         <Route path=":id"
           component={ TaskDetailContainer }
           onEnter={ handleLogin }>

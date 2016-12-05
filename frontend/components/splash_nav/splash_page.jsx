@@ -18,16 +18,21 @@ class SplashPage extends React.Component {
       <div className="splash-page">
         <SplashNav />
         <div className="splash-main">
-          <div className="header">
-            <h1>Organize your To Do List. Get stuff done!</h1>
-            <input type="button"
-              value="Guest Login"
-              onClick={ this.guestLogin }>
-            </input>
-          </div>
           <div className="image-container">
             <div className="image">
-              <img src='assets/splash_image.png'></img>
+
+              <div className="header">
+                <h1>Taskable</h1>
+                <input type="button"
+                  value="Guest Login"
+                  onClick={ this.guestLogin }>
+                </input>
+                <div className="hr-div">
+                  <hr></hr>
+                </div>
+                <h2>The fastest way to organize your to do lists. Get stuff done & be more productive!</h2>
+              </div>
+              <img src='assets/splash_bg.jpg'></img>
             </div>
           </div>
         </div>

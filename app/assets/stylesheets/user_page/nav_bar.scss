@@ -8,7 +8,7 @@
   display: flex;
   min-height: 40px;
   width: 100%;
-  background-color: #0056B7;
+  background-color: $theme-color;
   align-items: center;
   justify-content: center;
   color: $theme-font-color;
@@ -25,16 +25,22 @@
 
     .search-bar {
       width: 33%;
-      
+
       >input {
         width: 100%;
         outline: none;
         border-radius: 3px;
-        border: 1px solid #d0d3d6;
+        border: 0;
+        padding: 5px 13px;
         line-height: 1.25rem;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        background-color: #264a47;
+        transition: background-color .7s;
+      }
+      >input:focus {
+          background-color: #fff;
       }
     }
 
@@ -42,10 +48,12 @@
       color: $theme-font-color;
       text-decoration: none;
       padding: 10px;
+      border-radius: 4px;
+
+      transition: background-color .5s;
     }
     a:hover {
-      background-color: $theme-hover-color;
-      border-radius: 4px;
+      background-color: #264a47;
     }
   }
 }

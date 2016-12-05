@@ -10,18 +10,20 @@ class TasksIndex extends React.Component {
 
   render () {
     let { tasks } = this.props;
+    tasks = Object.keys(tasks).map(taskId => (
+      <TaskIndexItemContainer
+        id={taskId}
+        title={tasks[taskId].title}
+        completed={tasks[taskId].completed}
+        description={tasks[taskId].description}
+        due_date={tasks[taskId].due_date}
+        key={taskId} />
+    ));
+    tasks = tasks.slice(0, tasks.length - 1);
     return (
       <div className="tasks-index">
         <ul>
-          {Object.keys(tasks).map(taskId => (
-            <TaskIndexItemContainer
-              id={taskId}
-              title={tasks[taskId].title}
-              completed={tasks[taskId].completed}
-              description={tasks[taskId].description}
-              due_date={tasks[taskId].due_date}
-              key={taskId} />
-          ))}
+          { tasks }
         </ul>
       </div>
     );
