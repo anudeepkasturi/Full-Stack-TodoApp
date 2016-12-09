@@ -18,7 +18,7 @@ class Greeting extends React.Component {
     let { currentUser } = this.props;
     return (
       <hgroup className="header-group">
-        <h2>Welcome, {currentUser.username}!</h2>
+        <h2>Hello, {currentUser.username}!</h2>
         <SearchBarContainer />
         <Link to="/" onClick={this.handleLogout}>Log Out</Link>
       </hgroup>
