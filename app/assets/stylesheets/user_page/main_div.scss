@@ -55,6 +55,7 @@
       width: 100%;
       display: block;
       padding-bottom: 5px;
+      transition: height 0.4s;
 
       form {
         width: 100%;
@@ -119,7 +120,7 @@
       }
 
       .task-index-item a {
-        width: 100%;
+        width: 92%;
         height: 100%;
         padding: 13px 5px;
         margin: 2px 0;
@@ -127,6 +128,7 @@
         text-decoration: none;
         color: #000;
         font-weight: bold;
+        margin-right: 3px;
       }
       a:hover {
         background-color: #E6E6E6;
@@ -134,9 +136,25 @@
       .completed {
         a {
           text-decoration: line-through;
-
           color: rgba(0, 0, 0, 0.4);
         }
+      }
+
+      .task-index-item button {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-color: $theme-bg;
+        border: none;
+        font-weight: bold;
+        color: $theme-accent-color;
+        border-radius: 50%;
+        font-size: 0.6rem;
+        line-height: 0.1rem;
+      }
+      .task-index-item button:hover {
+        cursor: pointer;
+        background-color: darken($theme-bg, 7%);
       }
     }
   }

@@ -21,6 +21,7 @@ export const destroyTask = (id, success, error) => {
   $.ajax({
     url: `api/tasks/${id}`,
     method: "delete",
+    data: {task: {id: `${id}`}},
     success,
     error
   });

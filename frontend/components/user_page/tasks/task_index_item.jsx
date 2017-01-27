@@ -6,10 +6,17 @@ class TaskIndexItem extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleClick() {
+    console.log('k');
     this.props.selectTask(this.props.id);
+  }
+
+  handleDelete() {
+    this.props.destroyTask(this.props.id);
+    this.props.router.push(`/home/${this.props.listId}`);
   }
 
   render () {
@@ -20,10 +27,10 @@ class TaskIndexItem extends React.Component {
     return (
       <li className={klass}>
         <Link to={path} onClick={ this.handleClick }>{ title }</Link>
+        <button onClick={ this.handleDelete }>x</button>
       </li>
     );
   }
 }
-
 
 export default withRouter(TaskIndexItem);
