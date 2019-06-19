@@ -26,8 +26,9 @@ class TaskIndexItem extends React.Component {
     let klass = "task-index-item" + completedClass;
     return (
       <li className={klass}>
-        <Link to={path} onClick={ this.handleClick }>{ title }</Link>
+        <Link to={path} onClick={ this.handleClick }>{ title }
         <button onClick={ this.handleDelete }>x</button>
+        </Link>
       </li>
     );
   }

@@ -1,6 +1,15 @@
-$theme-color: #529485;
+$dark-brown: rgb(76,36,22);
+$light-brown: rgb(237,217,192);
+$dark-navy: rgb(34,43,63);
+$blue: rgb(0,120,224);
+$navy: rgb(35,45,62);
+$light-grey: rgb(168,175,184);
+$white: rgb(255,255,255);
+$black: rgb(0,0,0);
+
+$theme-color: $blue;
 $theme-font-color: #fff;
 $theme-hover-color: #004CBE;
-$theme-accent-color: #7d4627;
+$theme-accent-color: $dark-navy;
 $theme-accent-hover-color: #ca492e;
-$theme-bg: #dce6c2;
+$theme-bg: #004CBE;

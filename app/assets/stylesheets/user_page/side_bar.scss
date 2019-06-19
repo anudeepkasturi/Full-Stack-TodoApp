@@ -31,7 +31,7 @@
     height: 100%;
     padding: 7px 10px;
     text-decoration: none;
-    color: #7d4627;
+    color: $light-brown;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,7 +46,7 @@
   }
 
   ul li:hover {
-    background-color: #c9d8c5;
+    background-color: $light-grey;
   }
   button {
     display: none;

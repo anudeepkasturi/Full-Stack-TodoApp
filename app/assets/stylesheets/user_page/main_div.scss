@@ -4,7 +4,7 @@
   display: flex;
   height: 100%;
   box-sizing: border-box;
-  background-color: #f9e1b3;
+  background-color: $navy;
 }
 
 .main-div {
@@ -14,7 +14,7 @@
   margin: 9px 0 9px 0;
   height: calc(100% - 20px);
   width: 100%;
-  background-color: #edd9c0;
+  background-color: $navy;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 
@@ -41,7 +41,7 @@
   .list {
     margin: 0 1px;
     padding: 3px 15px;
-    background-color: #fff;
+    background-color: lighten($light-grey, 25%);
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -55,7 +55,7 @@
       width: 100%;
       display: block;
       padding-bottom: 5px;
-      transition: height 0.4s;
+      min-height: 72px;
 
       form {
         width: 100%;
@@ -83,13 +83,14 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             z-index: 2;
-
+            background-color: $navy;
           }
         }
         >input {
           color: $theme-font-color;
           background-color: $theme-color;
           border: none;
+          padding: 5px;
           border-radius: 3px;
           cursor: pointer;
           font-size: 15px;
@@ -111,6 +112,7 @@
 
     .tasks-index {
       overflow: scroll;
+      height: 100%;
 
       .task-index-item {
         border-top: 1px solid #ccc;
@@ -120,7 +122,7 @@
       }
 
       .task-index-item a {
-        width: 92%;
+        width: 96%;
         height: 100%;
         padding: 13px 5px;
         margin: 2px 0;
@@ -129,9 +131,10 @@
         color: #000;
         font-weight: bold;
         margin-right: 3px;
+        transition: background-color 0.3s;
       }
       a:hover {
-        background-color: #E6E6E6;
+        background-color: $light-grey;
       }
       .completed {
         a {
@@ -141,10 +144,10 @@
       }
 
       .task-index-item button {
-        display: inline-block;
+        float: right;
         width: 18px;
         height: 18px;
-        background-color: $theme-bg;
+        background-color: $light-grey;
         border: none;
         font-weight: bold;
         color: $theme-accent-color;
@@ -154,7 +157,7 @@
       }
       .task-index-item button:hover {
         cursor: pointer;
-        background-color: darken($theme-bg, 7%);
+        background-color: darken($light-grey, 7%);
       }
     }
   }
@@ -168,7 +171,7 @@
       display: flex;
     }
     >div>div {
-      background-color: #c9d8c5;
+      background-color: lighten($light-grey, 25%);
       margin: 1px;
       vertical-align: top;
       display: inline-block;
@@ -201,7 +204,7 @@
 
   .task {
     margin: 0 1px;
-    background-color: #fff;
+    background-color: lighten($light-grey, 25%);
     display: flex;
     flex-direction: column;
     width: 50%;
