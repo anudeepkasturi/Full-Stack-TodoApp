@@ -4,7 +4,7 @@
   display: flex;
   height: 100%;
   box-sizing: border-box;
-  background-color: $navy;
+  background-color: darken($navy, 7%);
 }
 
 .main-div {
@@ -63,7 +63,6 @@
         flex-direction: column;
         align-items: flex-end;
 
-
         .new-task-title {
           display: flex;
           margin: 5px 0;
@@ -84,6 +83,11 @@
             white-space: nowrap;
             z-index: 2;
             background-color: $navy;
+            transition: background-color 0.3s;
+          }
+
+          input:focus {
+            background-color: #fff;
           }
         }
         >input {
@@ -192,10 +196,10 @@
       }
     }
     .summary-tasks>p {
-      color: #7d4627;
+      color: $dark-navy;
     }
     .summary-incomplete>p {
-      color: #c50000;
+      color: $dark-brown;
     }
     .summary-complete {
       color: rgba(0,0,0,0.4);

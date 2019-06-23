@@ -19,10 +19,4 @@ document.addEventListener("DOMContentLoaded", () => {
   Modal.setAppElement(document.body);
 
   ReactDOM.render(<Root store={store} />, root);
-
-
-  //testing
-  window.store = store;
-  window.destroyTask = destroyTask;
-
 });
