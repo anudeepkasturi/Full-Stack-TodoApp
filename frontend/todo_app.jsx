@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
-import { destroyTask } from './actions/task_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
